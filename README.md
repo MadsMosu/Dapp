@@ -3,8 +3,11 @@
 ## Prerequisites
 
 Be sure to have the following installed:
-- MongoDB
+- MongoDB Shell
 - Ganache-cli
+
+MongoDB Shell can be downloaded from the following site: https://www.mongodb.com/download-center#community
+Ganache can be downloaded from the following site: http://truffleframework.com/ganache/
 
 ### How to Start MongoDB
 
