@@ -1,0 +1,381 @@
+ [{
+ 		"constant": true,
+ 		"inputs": [{
+ 			"name": "account",
+ 			"type": "address"
+ 		}],
+ 		"name": "getEmployeeByAddress",
+ 		"outputs": [{
+ 				"name": "",
+ 				"type": "address"
+ 			},
+ 			{
+ 				"name": "",
+ 				"type": "string"
+ 			},
+ 			{
+ 				"name": "",
+ 				"type": "string"
+ 			},
+ 			{
+ 				"name": "",
+ 				"type": "bool"
+ 			}
+ 		],
+ 		"payable": false,
+ 		"stateMutability": "view",
+ 		"type": "function"
+ 	},
+ 	{
+ 		"constant": true,
+ 		"inputs": [{
+ 			"name": "employeeID",
+ 			"type": "string"
+ 		}],
+ 		"name": "getEmployeeByEmployeeID",
+ 		"outputs": [{
+ 				"name": "",
+ 				"type": "address"
+ 			},
+ 			{
+ 				"name": "",
+ 				"type": "string"
+ 			},
+ 			{
+ 				"name": "",
+ 				"type": "string"
+ 			},
+ 			{
+ 				"name": "",
+ 				"type": "bool"
+ 			}
+ 		],
+ 		"payable": false,
+ 		"stateMutability": "view",
+ 		"type": "function"
+ 	},
+ 	{
+ 		"constant": false,
+ 		"inputs": [{
+ 			"name": "account",
+ 			"type": "address"
+ 		}],
+ 		"name": "removeAuthentication",
+ 		"outputs": [],
+ 		"payable": false,
+ 		"stateMutability": "nonpayable",
+ 		"type": "function"
+ 	},
+ 	{
+ 		"constant": true,
+ 		"inputs": [],
+ 		"name": "getAdminDetails",
+ 		"outputs": [{
+ 				"name": "",
+ 				"type": "address"
+ 			},
+ 			{
+ 				"name": "",
+ 				"type": "string"
+ 			},
+ 			{
+ 				"name": "",
+ 				"type": "string"
+ 			},
+ 			{
+ 				"name": "",
+ 				"type": "bool"
+ 			}
+ 		],
+ 		"payable": false,
+ 		"stateMutability": "view",
+ 		"type": "function"
+ 	},
+ 	{
+ 		"constant": true,
+ 		"inputs": [{
+ 			"name": "name",
+ 			"type": "string"
+ 		}],
+ 		"name": "getEmployeeByName",
+ 		"outputs": [{
+ 				"name": "",
+ 				"type": "address"
+ 			},
+ 			{
+ 				"name": "",
+ 				"type": "string"
+ 			},
+ 			{
+ 				"name": "",
+ 				"type": "string"
+ 			},
+ 			{
+ 				"name": "",
+ 				"type": "bool"
+ 			}
+ 		],
+ 		"payable": false,
+ 		"stateMutability": "view",
+ 		"type": "function"
+ 	},
+ 	{
+ 		"constant": true,
+ 		"inputs": [{
+ 			"name": "index",
+ 			"type": "uint256"
+ 		}],
+ 		"name": "getEmployeeByIndex",
+ 		"outputs": [{
+ 				"name": "",
+ 				"type": "address"
+ 			},
+ 			{
+ 				"name": "",
+ 				"type": "string"
+ 			},
+ 			{
+ 				"name": "",
+ 				"type": "string"
+ 			},
+ 			{
+ 				"name": "",
+ 				"type": "bool"
+ 			}
+ 		],
+ 		"payable": false,
+ 		"stateMutability": "view",
+ 		"type": "function"
+ 	},
+ 	{
+ 		"constant": false,
+ 		"inputs": [{
+ 			"name": "account",
+ 			"type": "address"
+ 		}],
+ 		"name": "addAuthentication",
+ 		"outputs": [],
+ 		"payable": false,
+ 		"stateMutability": "nonpayable",
+ 		"type": "function"
+ 	},
+ 	{
+ 		"constant": true,
+ 		"inputs": [{
+ 			"name": "account",
+ 			"type": "address"
+ 		}],
+ 		"name": "hasAccessByAddress",
+ 		"outputs": [{
+ 			"name": "",
+ 			"type": "bool"
+ 		}],
+ 		"payable": false,
+ 		"stateMutability": "view",
+ 		"type": "function"
+ 	},
+ 	{
+ 		"constant": true,
+ 		"inputs": [],
+ 		"name": "employeesCount",
+ 		"outputs": [{
+ 			"name": "",
+ 			"type": "uint256"
+ 		}],
+ 		"payable": false,
+ 		"stateMutability": "view",
+ 		"type": "function"
+ 	},
+ 	{
+ 		"constant": false,
+ 		"inputs": [{
+ 				"name": "account",
+ 				"type": "address"
+ 			},
+ 			{
+ 				"name": "name",
+ 				"type": "string"
+ 			},
+ 			{
+ 				"name": "employeeID",
+ 				"type": "string"
+ 			}
+ 		],
+ 		"name": "newEmployee",
+ 		"outputs": [],
+ 		"payable": false,
+ 		"stateMutability": "nonpayable",
+ 		"type": "function"
+ 	},
+ 	{
+ 		"constant": false,
+ 		"inputs": [{
+ 				"name": "account",
+ 				"type": "address"
+ 			},
+ 			{
+ 				"name": "name",
+ 				"type": "string"
+ 			},
+ 			{
+ 				"name": "employeeID",
+ 				"type": "string"
+ 			}
+ 		],
+ 		"name": "updateEmployee",
+ 		"outputs": [],
+ 		"payable": false,
+ 		"stateMutability": "nonpayable",
+ 		"type": "function"
+ 	},
+ 	{
+ 		"constant": true,
+ 		"inputs": [],
+ 		"name": "admin",
+ 		"outputs": [{
+ 			"name": "",
+ 			"type": "address"
+ 		}],
+ 		"payable": false,
+ 		"stateMutability": "view",
+ 		"type": "function"
+ 	},
+ 	{
+ 		"inputs": [{
+ 				"name": "name",
+ 				"type": "string"
+ 			},
+ 			{
+ 				"name": "employeeID",
+ 				"type": "string"
+ 			}
+ 		],
+ 		"payable": false,
+ 		"stateMutability": "nonpayable",
+ 		"type": "constructor"
+ 	},
+ 	{
+ 		"anonymous": false,
+ 		"inputs": [{
+ 				"indexed": true,
+ 				"name": "id",
+ 				"type": "uint256"
+ 			},
+ 			{
+ 				"indexed": false,
+ 				"name": "employee",
+ 				"type": "address"
+ 			},
+ 			{
+ 				"indexed": false,
+ 				"name": "name",
+ 				"type": "string"
+ 			},
+ 			{
+ 				"indexed": false,
+ 				"name": "employeeID",
+ 				"type": "string"
+ 			},
+ 			{
+ 				"indexed": false,
+ 				"name": "timestamp",
+ 				"type": "uint256"
+ 			}
+ 		],
+ 		"name": "NewEmployeeEvent",
+ 		"type": "event"
+ 	},
+ 	{
+ 		"anonymous": false,
+ 		"inputs": [{
+ 				"indexed": true,
+ 				"name": "id",
+ 				"type": "uint256"
+ 			},
+ 			{
+ 				"indexed": false,
+ 				"name": "employee",
+ 				"type": "address"
+ 			},
+ 			{
+ 				"indexed": false,
+ 				"name": "name",
+ 				"type": "string"
+ 			},
+ 			{
+ 				"indexed": false,
+ 				"name": "employeeID",
+ 				"type": "string"
+ 			},
+ 			{
+ 				"indexed": false,
+ 				"name": "timestamp",
+ 				"type": "uint256"
+ 			}
+ 		],
+ 		"name": "UpdateEmployeeEvent",
+ 		"type": "event"
+ 	},
+ 	{
+ 		"anonymous": false,
+ 		"inputs": [{
+ 				"indexed": true,
+ 				"name": "id",
+ 				"type": "uint256"
+ 			},
+ 			{
+ 				"indexed": false,
+ 				"name": "employee",
+ 				"type": "address"
+ 			},
+ 			{
+ 				"indexed": false,
+ 				"name": "name",
+ 				"type": "string"
+ 			},
+ 			{
+ 				"indexed": false,
+ 				"name": "employeeID",
+ 				"type": "string"
+ 			},
+ 			{
+ 				"indexed": false,
+ 				"name": "timestamp",
+ 				"type": "uint256"
+ 			}
+ 		],
+ 		"name": "RemoveAuthenticationEvent",
+ 		"type": "event"
+ 	},
+ 	{
+ 		"anonymous": false,
+ 		"inputs": [{
+ 				"indexed": true,
+ 				"name": "id",
+ 				"type": "uint256"
+ 			},
+ 			{
+ 				"indexed": false,
+ 				"name": "employee",
+ 				"type": "address"
+ 			},
+ 			{
+ 				"indexed": false,
+ 				"name": "name",
+ 				"type": "string"
+ 			},
+ 			{
+ 				"indexed": false,
+ 				"name": "employeeID",
+ 				"type": "string"
+ 			},
+ 			{
+ 				"indexed": false,
+ 				"name": "timestamp",
+ 				"type": "uint256"
+ 			}
+ 		],
+ 		"name": "AddAuthenticationEvent",
+ 		"type": "event"
+ 	}
+ ]
