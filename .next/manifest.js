@@ -90,7 +90,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "68bb43d6b8b0c85ecd17"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "52bc5a10045c17c41d51"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -755,7 +755,7 @@
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"main.js","1":"bundles\\pages\\_error.js","3":"bundles\\pages\\index.js","4":"bundles\\pages\\showCellTissue.js"}[chunkId]||chunkId) + "-" + {"0":"e3e4878e71ac2f41d812","1":"236aea7be108cbc5c53a","3":"5b5fde2190889d5888b0","4":"dba872746c4dfc34276a"}[chunkId] + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"main.js","1":"bundles\\pages\\_error.js","4":"bundles\\pages\\admin.js","5":"bundles\\pages\\showCellTissue.js"}[chunkId]||chunkId) + "-" + {"0":"e3e4878e71ac2f41d812","1":"236aea7be108cbc5c53a","4":"d5854e7f0f51d6967ca3","5":"45c0144c2d5b27dd893b"}[chunkId] + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {

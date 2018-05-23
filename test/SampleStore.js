@@ -171,45 +171,4 @@ contract('SampleStore', function(accounts) {
       assert.equal(sample.description, cellTissueSample[6]);
     });
   });
-/*
-  describe('getAllCellTissueSamples', function() {
-    it('Should return all cell/tissue samples', async () => {
-      await sampleStore.addCellTissueSample("OUHd", "238239DADDWA", "14/08/2017", "Doctor test clinia", "Cell tissue 1", "14/07/2018", "status test 1", "sample description 1", {from: accounts[1]});
-      await sampleStore.addCellTissueSample("CPH", "238239DADDWAW", "14/09/2017", "Doctor test cliniq", "Cell tissue 2", "14/08/2018", "status test 2", "sample description 2", {from: accounts[1]});
-      await sampleStore.addCellTissueSample("AAH", "238239DADAXADC", "14/10/2017", "Doctor test clinib", "Cell tissue 3", "14/09/2018", "status test 3", "sample description 3", {from: accounts[1]});
-
-      let count = await sampleStore.cellTissueSampleCount({from: accounts[1]});
-      assert.equal(count.valueOf(), 3);
-      const cellTissueSamples = await sampleStore.getAllCellTissueSamples({from: accounts[1]});
-      const cellTissueSampleIndicators = await sampleStore.getAllCellTissueSampleIndicators({from: accounts[1]});
-      for(let i = 0; i <= count.valueOf(); i++) {
-        const sample = {
-          id: cellTissueSampleIndicators[0][i],
-          establishment: cellTissueSamples[0][i],
-          donationID: cellTissueSampleIndicators[1][i],
-          dateOfProcurement: cellTissueSamples[1][i],
-          placeOfProcurement: cellTissueSamples[2][i],
-          donationType: cellTissueSamples[3][i],
-          dateOfExpiry: cellTissueSamples[4][i],
-          status: cellTissueSamples[5][i],
-          description: cellTissueSamples[6][i],
-          signer: cellTissueSampleIndicators[2][i],
-          inStorage: cellTissueSampleIndicators[3][i],
-        }
-
-        assert.equal(sample.id, cellTissueSampleIndicators[0]);
-        assert.equal(sample.donationID, cellTissueSampleIndicators[1]);
-        assert.equal(sample.signer, cellTissueSampleIndicators[2]);
-        assert.equal(sample.inStorage, cellTissueSampleIndicators[3]);
-        assert.equal(sample.establishment, cellTissueSamples[0]);
-        assert.equal(sample.dateOfProcurement, cellTissueSamples[1]);
-        assert.equal(sample.placeOfProcurement, cellTissueSamples[2]);
-        assert.equal(sample.donationType, cellTissueSamples[3]);
-        assert.equal(sample.dateOfExpiry, cellTissueSamples[4]);
-        assert.equal(sample.status, cellTissueSamples[5]);
-        assert.equal(sample.description, cellTissueSamples[6]);
-      }
-    });
-  });
-  */
 });

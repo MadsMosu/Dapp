@@ -1,10 +1,571 @@
 module.exports =
 
-        __NEXT_REGISTER_PAGE('/showCellTissue', function() {
+        __NEXT_REGISTER_PAGE('/admin', function() {
           var comp = 
-      webpackJsonp([5],{
+      webpackJsonp([4],{
 
-/***/ "./components/Header.js":
+/***/ "./components/admin/EmployeeRow.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__ = __webpack_require__("./node_modules/babel-runtime/regenerator/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__("./node_modules/react/cjs/react.development.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ethers__ = __webpack_require__("./node_modules/ethers/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ethers___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_ethers__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_configs_provider__ = __webpack_require__("./utils/configs/provider.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils_abi_employeeStore__ = __webpack_require__("./utils/abi/employeeStore.json");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils_abi_employeeStore___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__utils_abi_employeeStore__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__utils_addresses_employeeStore__ = __webpack_require__("./utils/addresses/employeeStore.js");
+
+var _jsxFileName = 'C:\\Users\\Mads\\Documents\\Bachelor\\Dapp\\components\\admin\\EmployeeRow.js';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+(function () {
+    var enterModule = __webpack_require__("./node_modules/react-hot-loader/index.js").enterModule;
+
+    enterModule && enterModule(module);
+})();
+
+function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+
+
+
+var EmployeeRow = function (_Component) {
+    _inherits(EmployeeRow, _Component);
+
+    function EmployeeRow(props) {
+        var _this2 = this;
+
+        _classCallCheck(this, EmployeeRow);
+
+        var _this = _possibleConstructorReturn(this, (EmployeeRow.__proto__ || Object.getPrototypeOf(EmployeeRow)).call(this, props));
+
+        _this.componentWillMount = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee() {
+            return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
+                while (1) {
+                    switch (_context.prev = _context.next) {
+                        case 0:
+                            _context.next = 2;
+                            return __WEBPACK_IMPORTED_MODULE_4__utils_configs_provider__["a" /* default */].getBalance(_this.props.employee[0]).then(function (balance) {
+                                var accBalance = __WEBPACK_IMPORTED_MODULE_3_ethers___default.a.utils.formatEther(balance);
+                                _this.setState({ balance: accBalance });
+                            });
+
+                        case 2:
+                        case 'end':
+                            return _context.stop();
+                    }
+                }
+            }, _callee, _this2);
+        }));
+        _this.onClickAuth = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee2() {
+            var adminWallet, EmployeeStore;
+            return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee2$(_context2) {
+                while (1) {
+                    switch (_context2.prev = _context2.next) {
+                        case 0:
+                            adminWallet = new __WEBPACK_IMPORTED_MODULE_3_ethers___default.a.Wallet("0xcc213ad8f9f68662570d16bc20be6662f86477e3e7edd3b140b007bca44c6186", __WEBPACK_IMPORTED_MODULE_4__utils_configs_provider__["a" /* default */]);
+                            EmployeeStore = new __WEBPACK_IMPORTED_MODULE_3_ethers___default.a.Contract(__WEBPACK_IMPORTED_MODULE_6__utils_addresses_employeeStore__["a" /* default */], __WEBPACK_IMPORTED_MODULE_5__utils_abi_employeeStore___default.a, adminWallet);
+
+                            if (!(_this.props.employee[3].toString() == "true")) {
+                                _context2.next = 7;
+                                break;
+                            }
+
+                            _context2.next = 5;
+                            return EmployeeStore.removeAuthentication(_this.props.employee[0]);
+
+                        case 5:
+                            _context2.next = 9;
+                            break;
+
+                        case 7:
+                            _context2.next = 9;
+                            return EmployeeStore.addAuthentication(_this.props.employee[0]);
+
+                        case 9:
+                            ;
+
+                            window.alert('Please wait for the transaction to finish and reload the page.');
+
+                        case 11:
+                        case 'end':
+                            return _context2.stop();
+                    }
+                }
+            }, _callee2, _this2);
+        }));
+
+        _this.state = {
+            balance: ""
+        };
+        return _this;
+    }
+
+    _createClass(EmployeeRow, [{
+        key: 'renderButton',
+        value: function renderButton() {
+            if (this.props.employee[0].toString() == '0xa9a77d5e0EE091eee7Eeb761C18b1324aC8F16Dc') {
+                return 'Authenticated';
+            } else {
+                if (this.props.employee[3].toString() == "true") {
+                    return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                        __WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["a" /* Button */],
+                        { basic: true, onClick: this.onClickAuth, __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 43
+                            }
+                        },
+                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["d" /* Icon */], { color: 'green', name: 'checkmark', size: 'large', __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 44
+                            }
+                        })
+                    );
+                } else {
+                    return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                        __WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["a" /* Button */],
+                        { basic: true, onClick: this.onClickAuth, __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 49
+                            }
+                        },
+                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["d" /* Icon */], { color: 'red', name: 'close', size: 'large', __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 50
+                            }
+                        })
+                    );
+                }
+            }
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var Row = __WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["g" /* Table */].Row,
+                Cell = __WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["g" /* Table */].Cell,
+                Button = __WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["g" /* Table */].Button;
+
+            return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                Row,
+                {
+                    __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 60
+                    }
+                },
+                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                    Cell,
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 61
+                        }
+                    },
+                    this.props.employee[1]
+                ),
+                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                    Cell,
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 62
+                        }
+                    },
+                    this.props.employee[2]
+                ),
+                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                    Cell,
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 63
+                        }
+                    },
+                    this.props.employee[0]
+                ),
+                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                    Cell,
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 64
+                        }
+                    },
+                    this.state.balance + ' Ether'
+                ),
+                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                    Cell,
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 65
+                        }
+                    },
+                    this.renderButton()
+                )
+            );
+        }
+    }, {
+        key: '__reactstandin__regenerateByEval',
+        value: function __reactstandin__regenerateByEval(key, code) {
+            this[key] = eval(code);
+        }
+    }]);
+
+    return EmployeeRow;
+}(__WEBPACK_IMPORTED_MODULE_1_react__["Component"]);
+
+var _default = EmployeeRow;
+
+
+/* harmony default export */ __webpack_exports__["a"] = (_default);
+;
+
+(function () {
+    var reactHotLoader = __webpack_require__("./node_modules/react-hot-loader/index.js").default;
+
+    var leaveModule = __webpack_require__("./node_modules/react-hot-loader/index.js").leaveModule;
+
+    if (!reactHotLoader) {
+        return;
+    }
+
+    reactHotLoader.register(EmployeeRow, 'EmployeeRow', 'C:/Users/Mads/Documents/Bachelor/Dapp/components/admin/EmployeeRow.js');
+    reactHotLoader.register(_default, 'default', 'C:/Users/Mads/Documents/Bachelor/Dapp/components/admin/EmployeeRow.js');
+    leaveModule(module);
+})();
+
+;
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("./node_modules/next/node_modules/webpack/buildin/harmony-module.js")(module)))
+
+/***/ }),
+
+/***/ "./components/admin/EmployeeTable.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__ = __webpack_require__("./node_modules/babel-runtime/regenerator/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ethers__ = __webpack_require__("./node_modules/ethers/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ethers___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_ethers__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_configs_provider__ = __webpack_require__("./utils/configs/provider.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_configs_network__ = __webpack_require__("./utils/configs/network.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_abi_employeeStore__ = __webpack_require__("./utils/abi/employeeStore.json");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_abi_employeeStore___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__utils_abi_employeeStore__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils_addresses_employeeStore__ = __webpack_require__("./utils/addresses/employeeStore.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__EmployeeRow__ = __webpack_require__("./components/admin/EmployeeRow.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_graphql_tag__ = __webpack_require__("./node_modules/graphql-tag/src/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_graphql_tag___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_graphql_tag__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_react_apollo__ = __webpack_require__("./node_modules/react-apollo/react-apollo.browser.umd.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_react_apollo___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_react_apollo__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_react__ = __webpack_require__("./node_modules/react/cjs/react.development.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_semantic_ui_react__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/index.js");
+
+var _jsxFileName = 'C:\\Users\\Mads\\Documents\\Bachelor\\Dapp\\components\\admin\\EmployeeTable.js';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _templateObject = _taggedTemplateLiteral(['\n    query employee($employeeID: String){ \n        employee(employeeID: $employeeID) {\n            privateKey\n        }\n    }\n'], ['\n    query employee($employeeID: String){ \n        employee(employeeID: $employeeID) {\n            privateKey\n        }\n    }\n']);
+
+(function () {
+    var enterModule = __webpack_require__("./node_modules/react-hot-loader/index.js").enterModule;
+
+    enterModule && enterModule(module);
+})();
+
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+
+
+
+
+
+
+
+var EmployeeTable = function (_Component) {
+    _inherits(EmployeeTable, _Component);
+
+    function EmployeeTable(props) {
+        var _this2 = this;
+
+        _classCallCheck(this, EmployeeTable);
+
+        var _this = _possibleConstructorReturn(this, (EmployeeTable.__proto__ || Object.getPrototypeOf(EmployeeTable)).call(this, props));
+
+        _this.fetchEmployees = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee() {
+            var adminWallet, EmployeeStore, count, employeesList, i;
+            return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
+                while (1) {
+                    switch (_context.prev = _context.next) {
+                        case 0:
+                            adminWallet = new __WEBPACK_IMPORTED_MODULE_1_ethers___default.a.Wallet("0xcc213ad8f9f68662570d16bc20be6662f86477e3e7edd3b140b007bca44c6186", __WEBPACK_IMPORTED_MODULE_2__utils_configs_provider__["a" /* default */]);
+                            EmployeeStore = new __WEBPACK_IMPORTED_MODULE_1_ethers___default.a.Contract(__WEBPACK_IMPORTED_MODULE_5__utils_addresses_employeeStore__["a" /* default */], __WEBPACK_IMPORTED_MODULE_4__utils_abi_employeeStore___default.a, adminWallet);
+                            count = void 0;
+                            _context.next = 5;
+                            return EmployeeStore.functions.employeesCount().then(function (value) {
+                                count = value;
+                            });
+
+                        case 5:
+                            employeesList = [];
+                            i = 1;
+
+                        case 7:
+                            if (!(i <= count)) {
+                                _context.next = 13;
+                                break;
+                            }
+
+                            _context.next = 10;
+                            return EmployeeStore.getEmployeeByIndex(i).then(function (result) {
+                                employeesList.push(result);
+                            });
+
+                        case 10:
+                            i++;
+                            _context.next = 7;
+                            break;
+
+                        case 13:
+                            ;
+                            return _context.abrupt('return', { employeesList: employeesList });
+
+                        case 15:
+                        case 'end':
+                            return _context.stop();
+                    }
+                }
+            }, _callee, _this2);
+        }));
+        _this.componentWillMount = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee2() {
+            var employees;
+            return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee2$(_context2) {
+                while (1) {
+                    switch (_context2.prev = _context2.next) {
+                        case 0:
+                            _context2.next = 2;
+                            return _this.fetchEmployees();
+
+                        case 2:
+                            employees = _context2.sent;
+
+                            _this.setState({ employeesList: employees });
+
+                        case 4:
+                        case 'end':
+                            return _context2.stop();
+                    }
+                }
+            }, _callee2, _this2);
+        }));
+
+        _this.state = {
+            employeesList: [],
+            privateKey: ""
+        };
+        return _this;
+    }
+
+    _createClass(EmployeeTable, [{
+        key: 'renderRows',
+        value: function renderRows() {
+            return this.state.employeesList.map(function (employee, index) {
+                return __WEBPACK_IMPORTED_MODULE_9_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__EmployeeRow__["a" /* default */], {
+                    key: index,
+                    employee: employee,
+                    __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 48
+                    }
+                });
+            });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var Header = __WEBPACK_IMPORTED_MODULE_10_semantic_ui_react__["g" /* Table */].Header,
+                Row = __WEBPACK_IMPORTED_MODULE_10_semantic_ui_react__["g" /* Table */].Row,
+                HeaderCell = __WEBPACK_IMPORTED_MODULE_10_semantic_ui_react__["g" /* Table */].HeaderCell,
+                Body = __WEBPACK_IMPORTED_MODULE_10_semantic_ui_react__["g" /* Table */].Body;
+
+            return __WEBPACK_IMPORTED_MODULE_9_react___default.a.createElement(
+                'div',
+                {
+                    __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 59
+                    }
+                },
+                __WEBPACK_IMPORTED_MODULE_9_react___default.a.createElement(
+                    'h3',
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 60
+                        }
+                    },
+                    'Employees'
+                ),
+                __WEBPACK_IMPORTED_MODULE_9_react___default.a.createElement(
+                    __WEBPACK_IMPORTED_MODULE_10_semantic_ui_react__["g" /* Table */],
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 61
+                        }
+                    },
+                    __WEBPACK_IMPORTED_MODULE_9_react___default.a.createElement(
+                        Header,
+                        {
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 62
+                            }
+                        },
+                        __WEBPACK_IMPORTED_MODULE_9_react___default.a.createElement(
+                            Row,
+                            {
+                                __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 63
+                                }
+                            },
+                            __WEBPACK_IMPORTED_MODULE_9_react___default.a.createElement(
+                                HeaderCell,
+                                {
+                                    __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 64
+                                    }
+                                },
+                                'Name'
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_9_react___default.a.createElement(
+                                HeaderCell,
+                                {
+                                    __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 65
+                                    }
+                                },
+                                'Employee ID'
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_9_react___default.a.createElement(
+                                HeaderCell,
+                                {
+                                    __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 66
+                                    }
+                                },
+                                'Address'
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_9_react___default.a.createElement(
+                                HeaderCell,
+                                {
+                                    __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 67
+                                    }
+                                },
+                                'Account Balance'
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_9_react___default.a.createElement(
+                                HeaderCell,
+                                {
+                                    __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 68
+                                    }
+                                },
+                                'Authenticated'
+                            )
+                        )
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_9_react___default.a.createElement(
+                        Body,
+                        {
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 71
+                            }
+                        },
+                        this.renderRows()
+                    )
+                )
+            );
+        }
+    }, {
+        key: '__reactstandin__regenerateByEval',
+        value: function __reactstandin__regenerateByEval(key, code) {
+            this[key] = eval(code);
+        }
+    }]);
+
+    return EmployeeTable;
+}(__WEBPACK_IMPORTED_MODULE_9_react__["Component"]);
+
+var employee = __WEBPACK_IMPORTED_MODULE_7_graphql_tag___default()(_templateObject);
+
+var _default = Object(__WEBPACK_IMPORTED_MODULE_8_react_apollo__["graphql"])(employee, {
+    options: {
+        variables: { employeeID: "1234" }
+    }
+})(EmployeeTable);
+
+/* unused harmony default export */ var _unused_webpack_default_export = (_default);
+;
+
+(function () {
+    var reactHotLoader = __webpack_require__("./node_modules/react-hot-loader/index.js").default;
+
+    var leaveModule = __webpack_require__("./node_modules/react-hot-loader/index.js").leaveModule;
+
+    if (!reactHotLoader) {
+        return;
+    }
+
+    reactHotLoader.register(EmployeeTable, 'EmployeeTable', 'C:/Users/Mads/Documents/Bachelor/Dapp/components/admin/EmployeeTable.js');
+    reactHotLoader.register(employee, 'employee', 'C:/Users/Mads/Documents/Bachelor/Dapp/components/admin/EmployeeTable.js');
+    reactHotLoader.register(_default, 'default', 'C:/Users/Mads/Documents/Bachelor/Dapp/components/admin/EmployeeTable.js');
+    leaveModule(module);
+})();
+
+;
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("./node_modules/next/node_modules/webpack/buildin/harmony-module.js")(module)))
+
+/***/ }),
+
+/***/ "./components/admin/Header.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -13,7 +574,7 @@ module.exports =
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_semantic_ui_react__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__routes__ = __webpack_require__("./routes.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__routes___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__routes__);
-var _jsxFileName = 'C:\\Users\\Mads\\Documents\\Bachelor\\Dapp\\components\\Header.js';
+var _jsxFileName = 'C:\\Users\\Mads\\Documents\\Bachelor\\Dapp\\components\\admin\\Header.js';
 
 (function () {
   var enterModule = __webpack_require__("./node_modules/react-hot-loader/index.js").enterModule;
@@ -35,7 +596,7 @@ var _default = function _default() {
     },
     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       __WEBPACK_IMPORTED_MODULE_2__routes__["Link"],
-      { route: '/', __source: {
+      { route: '/admin', __source: {
           fileName: _jsxFileName,
           lineNumber: 8
         }
@@ -47,12 +608,12 @@ var _default = function _default() {
             lineNumber: 9
           }
         },
-        'Samples'
+        'Employees'
       )
     ),
     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       __WEBPACK_IMPORTED_MODULE_2__routes__["Link"],
-      { route: '/addBlood', __source: {
+      { route: '/admin/add', __source: {
           fileName: _jsxFileName,
           lineNumber: 11
         }
@@ -64,12 +625,12 @@ var _default = function _default() {
             lineNumber: 12
           }
         },
-        'Add Blood Sample'
+        'Add Employee'
       )
     ),
     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       __WEBPACK_IMPORTED_MODULE_2__routes__["Link"],
-      { route: '/addCellTissue', __source: {
+      { route: '/admin/transfer', __source: {
           fileName: _jsxFileName,
           lineNumber: 14
         }
@@ -81,7 +642,7 @@ var _default = function _default() {
             lineNumber: 15
           }
         },
-        'Add Cell/Tissue Sample'
+        'Transfer'
       )
     )
   );
@@ -99,7 +660,7 @@ var _default = function _default() {
     return;
   }
 
-  reactHotLoader.register(_default, 'default', 'C:/Users/Mads/Documents/Bachelor/Dapp/components/Header.js');
+  reactHotLoader.register(_default, 'default', 'C:/Users/Mads/Documents/Bachelor/Dapp/components/admin/Header.js');
   leaveModule(module);
 })();
 
@@ -108,17 +669,17 @@ var _default = function _default() {
 
 /***/ }),
 
-/***/ "./components/Layout.js":
+/***/ "./components/admin/Layout.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("./node_modules/react/cjs/react.development.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Header__ = __webpack_require__("./components/Header.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Header__ = __webpack_require__("./components/admin/Header.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_next_head__ = __webpack_require__("./node_modules/next/head.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_next_head___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_next_head__);
-var _jsxFileName = 'C:\\Users\\Mads\\Documents\\Bachelor\\Dapp\\components\\Layout.js';
+var _jsxFileName = 'C:\\Users\\Mads\\Documents\\Bachelor\\Dapp\\components\\admin\\Layout.js';
 
 (function () {
   var enterModule = __webpack_require__("./node_modules/react-hot-loader/index.js").enterModule;
@@ -176,7 +737,7 @@ var _default = function _default(props) {
     return;
   }
 
-  reactHotLoader.register(_default, 'default', 'C:/Users/Mads/Documents/Bachelor/Dapp/components/Layout.js');
+  reactHotLoader.register(_default, 'default', 'C:/Users/Mads/Documents/Bachelor/Dapp/components/admin/Layout.js');
   leaveModule(module);
 })();
 
@@ -69363,7 +69924,7 @@ if (hasSymbols()) {
 
 /***/ }),
 
-/***/ "./pages/showCellTissue.js":
+/***/ "./pages/admin/index.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -69372,34 +69933,28 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__("./node_modules/react/cjs/react.development.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Layout__ = __webpack_require__("./components/Layout.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__lib_withData__ = __webpack_require__("./lib/withData.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_react_apollo__ = __webpack_require__("./node_modules/react-apollo/react-apollo.browser.umd.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_react_apollo___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_react_apollo__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_graphql_tag__ = __webpack_require__("./node_modules/graphql-tag/src/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_graphql_tag___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_graphql_tag__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_semantic_ui_react__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_ethers__ = __webpack_require__("./node_modules/ethers/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_ethers___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_ethers__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__utils_configs_provider__ = __webpack_require__("./utils/configs/provider.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__utils_abi_sampleStore__ = __webpack_require__("./utils/abi/sampleStore.json");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__utils_abi_sampleStore___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__utils_abi_sampleStore__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__utils_addresses_sampleStore__ = __webpack_require__("./utils/addresses/sampleStore.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_admin_Layout__ = __webpack_require__("./components/admin/Layout.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_admin_EmployeeTable__ = __webpack_require__("./components/admin/EmployeeTable.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__lib_withData__ = __webpack_require__("./lib/withData.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ethers__ = __webpack_require__("./node_modules/ethers/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ethers___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_ethers__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__utils_configs_provider__ = __webpack_require__("./utils/configs/provider.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__utils_configs_network__ = __webpack_require__("./utils/configs/network.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__utils_abi_employeeStore__ = __webpack_require__("./utils/abi/employeeStore.json");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__utils_abi_employeeStore___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__utils_abi_employeeStore__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__utils_addresses_employeeStore__ = __webpack_require__("./utils/addresses/employeeStore.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_admin_EmployeeRow__ = __webpack_require__("./components/admin/EmployeeRow.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_semantic_ui_react__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/index.js");
 
-var _jsxFileName = 'C:\\Users\\Mads\\Documents\\Bachelor\\Dapp\\pages\\showCellTissue.js';
+var _jsxFileName = 'C:\\Users\\Mads\\Documents\\Bachelor\\Dapp\\pages\\admin\\index.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _templateObject = _taggedTemplateLiteral(['\n    query donation($id: Int, $type: String){ \n        donation(id: $id, type: $type) {\n            id\n            type\n            person {\n                cpr\n                firstName\n                lastName\n            }\n        }\n    }\n'], ['\n    query donation($id: Int, $type: String){ \n        donation(id: $id, type: $type) {\n            id\n            type\n            person {\n                cpr\n                firstName\n                lastName\n            }\n        }\n    }\n']),
-    _templateObject2 = _taggedTemplateLiteral(['\n    query employee($employeeID: String!){ \n        employee(employeeID: $employeeID) {\n            privateKey\n        }\n    }\n'], ['\n    query employee($employeeID: String!){ \n        employee(employeeID: $employeeID) {\n            privateKey\n        }\n    }\n']);
 
 (function () {
     var enterModule = __webpack_require__("./node_modules/react-hot-loader/index.js").enterModule;
 
     enterModule && enterModule(module);
 })();
-
-function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
@@ -69420,271 +69975,144 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var ShowCellTissue = function (_Component) {
-    _inherits(ShowCellTissue, _Component);
 
-    function ShowCellTissue() {
-        var _ref,
-            _this2 = this;
+var adminPage = function (_Component) {
+    _inherits(adminPage, _Component);
 
-        var _temp, _this, _ret;
+    function adminPage() {
+        _classCallCheck(this, adminPage);
 
-        _classCallCheck(this, ShowCellTissue);
-
-        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-            args[_key] = arguments[_key];
-        }
-
-        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ShowCellTissue.__proto__ || Object.getPrototypeOf(ShowCellTissue)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-            loading: false
-        }, _this.onTake = function () {
-            var _ref2 = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee(event) {
-                var employeeWallet, SampleStore;
-                return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
-                    while (1) {
-                        switch (_context.prev = _context.next) {
-                            case 0:
-                                event.preventDefault();
-                                _this.setState({ loading: true, errorMessage: '' });
-
-                                employeeWallet = new __WEBPACK_IMPORTED_MODULE_7_ethers___default.a.Wallet("0x274d1e42f06076e6d3ef981f0c244750827ccf56b19768816618e9217129a030", __WEBPACK_IMPORTED_MODULE_8__utils_configs_provider__["a" /* default */]);
-                                SampleStore = new __WEBPACK_IMPORTED_MODULE_7_ethers___default.a.Contract(__WEBPACK_IMPORTED_MODULE_10__utils_addresses_sampleStore__["a" /* default */], __WEBPACK_IMPORTED_MODULE_9__utils_abi_sampleStore___default.a, employeeWallet);
-                                _context.next = 6;
-                                return SampleStore.functions.takeCellTissueSample(_this.props.id);
-
-                            case 6:
-
-                                _this.setState({ loading: false });
-                                window.alert('Sample has been succesfully taken. Please wait for the transaction to finish.');
-
-                            case 8:
-                            case 'end':
-                                return _context.stop();
-                        }
-                    }
-                }, _callee, _this2);
-            }));
-
-            return function (_x) {
-                return _ref2.apply(this, arguments);
-            };
-        }(), _temp), _possibleConstructorReturn(_this, _ret);
+        return _possibleConstructorReturn(this, (adminPage.__proto__ || Object.getPrototypeOf(adminPage)).apply(this, arguments));
     }
 
-    _createClass(ShowCellTissue, [{
+    _createClass(adminPage, [{
+        key: 'renderRows',
+        value: function renderRows() {
+            return this.props.employees.map(function (employee, index) {
+                return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_10__components_admin_EmployeeRow__["a" /* default */], {
+                    key: index,
+                    employee: employee,
+                    __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 35
+                    }
+                });
+            });
+        }
+    }, {
         key: 'render',
         value: function render() {
-            if (this.props.data.loading) {
-                return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                    'div',
+            var Header = __WEBPACK_IMPORTED_MODULE_11_semantic_ui_react__["g" /* Table */].Header,
+                Row = __WEBPACK_IMPORTED_MODULE_11_semantic_ui_react__["g" /* Table */].Row,
+                HeaderCell = __WEBPACK_IMPORTED_MODULE_11_semantic_ui_react__["g" /* Table */].HeaderCell,
+                Body = __WEBPACK_IMPORTED_MODULE_11_semantic_ui_react__["g" /* Table */].Body;
+
+            return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_2__components_admin_Layout__["a" /* default */],
+                {
+                    __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 46
+                    }
+                },
+                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                    'h3',
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 55
+                            lineNumber: 47
                         }
                     },
-                    'Loading...'
-                );
-            } else {
-                return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                    __WEBPACK_IMPORTED_MODULE_2__components_Layout__["a" /* default */],
+                    'Employees'
+                ),
+                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                    __WEBPACK_IMPORTED_MODULE_11_semantic_ui_react__["g" /* Table */],
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 59
+                            lineNumber: 48
                         }
                     },
                     __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                        'h3',
+                        Header,
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 60
-                            }
-                        },
-                        'Sample Information'
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                        __WEBPACK_IMPORTED_MODULE_6_semantic_ui_react__["c" /* Grid */],
-                        { columns: 3, divided: true, __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 61
+                                lineNumber: 49
                             }
                         },
                         __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                            __WEBPACK_IMPORTED_MODULE_6_semantic_ui_react__["c" /* Grid */].Row,
-                            { stretched: true, __source: {
+                            Row,
+                            {
+                                __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 62
+                                    lineNumber: 50
                                 }
                             },
                             __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                                __WEBPACK_IMPORTED_MODULE_6_semantic_ui_react__["c" /* Grid */].Column,
+                                HeaderCell,
                                 {
                                     __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 63
+                                        lineNumber: 51
                                     }
                                 },
-                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                                    __WEBPACK_IMPORTED_MODULE_6_semantic_ui_react__["f" /* Segment */],
-                                    {
-                                        __source: {
-                                            fileName: _jsxFileName,
-                                            lineNumber: 64
-                                        }
-                                    },
-                                    'Establishment: ',
-                                    this.props.establishment
-                                ),
-                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                                    __WEBPACK_IMPORTED_MODULE_6_semantic_ui_react__["f" /* Segment */],
-                                    {
-                                        __source: {
-                                            fileName: _jsxFileName,
-                                            lineNumber: 65
-                                        }
-                                    },
-                                    'Date of procurement: ',
-                                    this.props.dateOfProcurement
-                                ),
-                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                                    __WEBPACK_IMPORTED_MODULE_6_semantic_ui_react__["f" /* Segment */],
-                                    {
-                                        __source: {
-                                            fileName: _jsxFileName,
-                                            lineNumber: 66
-                                        }
-                                    },
-                                    'Place of procurement: ',
-                                    this.props.placeOfProcurement
-                                )
+                                'Name'
                             ),
                             __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                                __WEBPACK_IMPORTED_MODULE_6_semantic_ui_react__["c" /* Grid */].Column,
+                                HeaderCell,
                                 {
                                     __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 68
+                                        lineNumber: 52
                                     }
                                 },
-                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                                    __WEBPACK_IMPORTED_MODULE_6_semantic_ui_react__["f" /* Segment */],
-                                    {
-                                        __source: {
-                                            fileName: _jsxFileName,
-                                            lineNumber: 69
-                                        }
-                                    },
-                                    'DonationType: ',
-                                    this.props.donationType
-                                ),
-                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                                    __WEBPACK_IMPORTED_MODULE_6_semantic_ui_react__["f" /* Segment */],
-                                    {
-                                        __source: {
-                                            fileName: _jsxFileName,
-                                            lineNumber: 70
-                                        }
-                                    },
-                                    'Date of expiry: ',
-                                    this.props.dateOfExpiry
-                                ),
-                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                                    __WEBPACK_IMPORTED_MODULE_6_semantic_ui_react__["f" /* Segment */],
-                                    {
-                                        __source: {
-                                            fileName: _jsxFileName,
-                                            lineNumber: 71
-                                        }
-                                    },
-                                    'Status: ',
-                                    this.props.status
-                                )
+                                'Employee ID'
                             ),
                             __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                                __WEBPACK_IMPORTED_MODULE_6_semantic_ui_react__["c" /* Grid */].Column,
+                                HeaderCell,
                                 {
                                     __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 73
+                                        lineNumber: 53
                                     }
                                 },
-                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                                    __WEBPACK_IMPORTED_MODULE_6_semantic_ui_react__["f" /* Segment */],
-                                    {
-                                        __source: {
-                                            fileName: _jsxFileName,
-                                            lineNumber: 74
-                                        }
-                                    },
-                                    'CPR number of person: ',
-                                    this.props.data.donation.person.cpr
-                                ),
-                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                                    __WEBPACK_IMPORTED_MODULE_6_semantic_ui_react__["f" /* Segment */],
-                                    {
-                                        __source: {
-                                            fileName: _jsxFileName,
-                                            lineNumber: 75
-                                        }
-                                    },
-                                    'First name: ',
-                                    this.props.data.donation.person.firstName
-                                ),
-                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                                    __WEBPACK_IMPORTED_MODULE_6_semantic_ui_react__["f" /* Segment */],
-                                    {
-                                        __source: {
-                                            fileName: _jsxFileName,
-                                            lineNumber: 76
-                                        }
-                                    },
-                                    'Last name: ',
-                                    this.props.data.donation.person.lastName
-                                )
-                            )
-                        ),
-                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                            __WEBPACK_IMPORTED_MODULE_6_semantic_ui_react__["c" /* Grid */].Row,
-                            { stretched: true, __source: {
-                                    fileName: _jsxFileName,
-                                    lineNumber: 79
-                                }
-                            },
+                                'Address'
+                            ),
                             __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                                __WEBPACK_IMPORTED_MODULE_6_semantic_ui_react__["c" /* Grid */].Column,
+                                HeaderCell,
                                 {
                                     __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 80
+                                        lineNumber: 54
                                     }
                                 },
-                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                                    __WEBPACK_IMPORTED_MODULE_6_semantic_ui_react__["f" /* Segment */],
-                                    {
-                                        __source: {
-                                            fileName: _jsxFileName,
-                                            lineNumber: 81
-                                        }
-                                    },
-                                    'Description: ',
-                                    this.props.description
-                                )
+                                'Account Balance'
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                HeaderCell,
+                                {
+                                    __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 55
+                                    }
+                                },
+                                'Authenticated'
                             )
                         )
                     ),
                     __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                        __WEBPACK_IMPORTED_MODULE_6_semantic_ui_react__["a" /* Button */],
-                        { loading: this.state.loading, onClick: this.onTake.bind(this), primary: true, style: { marginTop: '40px' }, __source: {
+                        Body,
+                        {
+                            __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 85
+                                lineNumber: 58
                             }
                         },
-                        'Take Sample'
+                        this.renderRows()
                     )
-                );
-            }
+                )
+            );
         }
     }, {
         key: '__reactstandin__regenerateByEval',
@@ -69694,68 +70122,66 @@ var ShowCellTissue = function (_Component) {
     }], [{
         key: 'getInitialProps',
         value: function () {
-            var _ref3 = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee2(props) {
-                var id, employeeWallet, SampleStore, sample;
-                return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee2$(_context2) {
+            var _ref = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee() {
+                var adminWallet, EmployeeStore, count, employees, i;
+                return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
                     while (1) {
-                        switch (_context2.prev = _context2.next) {
+                        switch (_context.prev = _context.next) {
                             case 0:
-                                id = props.query.id;
-                                employeeWallet = new __WEBPACK_IMPORTED_MODULE_7_ethers___default.a.Wallet("0x274d1e42f06076e6d3ef981f0c244750827ccf56b19768816618e9217129a030", __WEBPACK_IMPORTED_MODULE_8__utils_configs_provider__["a" /* default */]);
-                                SampleStore = new __WEBPACK_IMPORTED_MODULE_7_ethers___default.a.Contract(__WEBPACK_IMPORTED_MODULE_10__utils_addresses_sampleStore__["a" /* default */], __WEBPACK_IMPORTED_MODULE_9__utils_abi_sampleStore___default.a, employeeWallet);
-                                sample = void 0;
-                                _context2.next = 6;
-                                return SampleStore.functions.getCellTissueSampleByIndex(id).then(function (result) {
-                                    sample = result;
+                                adminWallet = new __WEBPACK_IMPORTED_MODULE_5_ethers___default.a.Wallet("0xcc213ad8f9f68662570d16bc20be6662f86477e3e7edd3b140b007bca44c6186", __WEBPACK_IMPORTED_MODULE_6__utils_configs_provider__["a" /* default */]);
+                                EmployeeStore = new __WEBPACK_IMPORTED_MODULE_5_ethers___default.a.Contract(__WEBPACK_IMPORTED_MODULE_9__utils_addresses_employeeStore__["a" /* default */], __WEBPACK_IMPORTED_MODULE_8__utils_abi_employeeStore___default.a, adminWallet);
+                                count = void 0;
+                                _context.next = 5;
+                                return EmployeeStore.functions.employeesCount().then(function (value) {
+                                    count = value;
                                 });
 
-                            case 6:
-                                return _context2.abrupt('return', {
-                                    id: id,
-                                    establishment: sample[0],
-                                    dateOfProcurement: sample[1],
-                                    placeOfProcurement: sample[2],
-                                    donationType: sample[3],
-                                    dateOfExpiry: sample[4],
-                                    status: sample[5],
-                                    description: sample[6]
-                                });
+                            case 5:
+                                employees = [];
+                                i = 1;
 
                             case 7:
+                                if (!(i <= count)) {
+                                    _context.next = 13;
+                                    break;
+                                }
+
+                                _context.next = 10;
+                                return EmployeeStore.getEmployeeByIndex(i).then(function (result) {
+                                    employees.push(result);
+                                });
+
+                            case 10:
+                                i++;
+                                _context.next = 7;
+                                break;
+
+                            case 13:
+                                ;
+                                return _context.abrupt('return', { employees: employees });
+
+                            case 15:
                             case 'end':
-                                return _context2.stop();
+                                return _context.stop();
                         }
                     }
-                }, _callee2, this);
+                }, _callee, this);
             }));
 
-            function getInitialProps(_x2) {
-                return _ref3.apply(this, arguments);
+            function getInitialProps() {
+                return _ref.apply(this, arguments);
             }
 
             return getInitialProps;
         }()
     }]);
 
-    return ShowCellTissue;
+    return adminPage;
 }(__WEBPACK_IMPORTED_MODULE_1_react__["Component"]);
 
 ;
 
-var donation = __WEBPACK_IMPORTED_MODULE_5_graphql_tag___default()(_templateObject);
-
-var employee = __WEBPACK_IMPORTED_MODULE_5_graphql_tag___default()(_templateObject2);
-
-var _default = Object(__WEBPACK_IMPORTED_MODULE_3__lib_withData__["a" /* default */])(Object(__WEBPACK_IMPORTED_MODULE_4_react_apollo__["graphql"])(donation, {
-    options: function options(props) {
-        return {
-            variables: {
-                id: props.id,
-                type: "Cell/tissue"
-            }
-        };
-    } })(ShowCellTissue));
-
+var _default = adminPage;
 /* harmony default export */ __webpack_exports__["default"] = (_default);
 ;
 
@@ -69768,10 +70194,8 @@ var _default = Object(__WEBPACK_IMPORTED_MODULE_3__lib_withData__["a" /* default
         return;
     }
 
-    reactHotLoader.register(ShowCellTissue, 'ShowCellTissue', 'C:/Users/Mads/Documents/Bachelor/Dapp/pages/showCellTissue.js');
-    reactHotLoader.register(donation, 'donation', 'C:/Users/Mads/Documents/Bachelor/Dapp/pages/showCellTissue.js');
-    reactHotLoader.register(employee, 'employee', 'C:/Users/Mads/Documents/Bachelor/Dapp/pages/showCellTissue.js');
-    reactHotLoader.register(_default, 'default', 'C:/Users/Mads/Documents/Bachelor/Dapp/pages/showCellTissue.js');
+    reactHotLoader.register(adminPage, 'adminPage', 'C:/Users/Mads/Documents/Bachelor/Dapp/pages/admin/index.js');
+    reactHotLoader.register(_default, 'default', 'C:/Users/Mads/Documents/Bachelor/Dapp/pages/admin/index.js');
     leaveModule(module);
 })();
 
@@ -69792,7 +70216,7 @@ var _default = Object(__WEBPACK_IMPORTED_MODULE_3__lib_withData__["a" /* default
           next.router.update(r, Component)
         }
       }
-    })(typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__.default : (module.exports.default || module.exports), "/showCellTissue")
+    })(typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__.default : (module.exports.default || module.exports), "/admin\\index")
   
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("./node_modules/next/node_modules/webpack/buildin/harmony-module.js")(module)))
 
@@ -69833,14 +70257,14 @@ module.exports = routes;
 
 /***/ }),
 
-/***/ "./utils/abi/sampleStore.json":
+/***/ "./utils/abi/employeeStore.json":
 /***/ (function(module, exports) {
 
-module.exports = [{"constant":true,"inputs":[],"name":"bloodSampleCount","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"index","type":"uint256"}],"name":"takeBloodSample","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"index","type":"uint256"}],"name":"isBloodSampleStored","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"establishment","type":"string"},{"name":"dateOfProcurement","type":"string"},{"name":"placeOfProcurement","type":"string"},{"name":"donationType","type":"string"},{"name":"dateOfExpiry","type":"string"},{"name":"status","type":"string"},{"name":"description","type":"string"}],"name":"addCellTissueSample","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"index","type":"uint256"}],"name":"takeCellTissueSample","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"index","type":"uint256"}],"name":"getBloodSampleIndicatorByIndex","outputs":[{"name":"","type":"uint256"},{"name":"","type":"address"},{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"index","type":"uint256"}],"name":"getCellTissueSampleIndicatorByIndex","outputs":[{"name":"","type":"uint256"},{"name":"","type":"address"},{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"index","type":"uint256"}],"name":"getCellTissueSampleByIndex","outputs":[{"name":"","type":"string"},{"name":"","type":"string"},{"name":"","type":"string"},{"name":"","type":"string"},{"name":"","type":"string"},{"name":"","type":"string"},{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"componentName","type":"string"},{"name":"volume","type":"uint256"},{"name":"establishment","type":"string"},{"name":"ABOGroup","type":"string"},{"name":"rhDGroup","type":"string"},{"name":"dateOfExpiry","type":"string"}],"name":"addBloodSample","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"index","type":"uint256"}],"name":"getBloodSampleByIndex","outputs":[{"name":"","type":"string"},{"name":"","type":"uint256"},{"name":"","type":"string"},{"name":"","type":"string"},{"name":"","type":"string"},{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"cellTissueSampleCount","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"index","type":"uint256"}],"name":"isCellTissueSampleStored","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[{"name":"extEmployeeStoreAddr","type":"address"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"name":"id","type":"uint256"},{"indexed":false,"name":"signer","type":"address"},{"indexed":false,"name":"timestamp","type":"uint256"}],"name":"NewBloodSample","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"id","type":"uint256"},{"indexed":false,"name":"signer","type":"address"},{"indexed":false,"name":"timestamp","type":"uint256"}],"name":"TakeBloodSample","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"id","type":"uint256"},{"indexed":false,"name":"signer","type":"address"},{"indexed":false,"name":"timestamp","type":"uint256"}],"name":"NewCellTissueSample","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"id","type":"uint256"},{"indexed":false,"name":"signer","type":"address"},{"indexed":false,"name":"timestamp","type":"uint256"}],"name":"TakeCellTissueSample","type":"event"}]
+module.exports = [{"constant":true,"inputs":[{"name":"account","type":"address"}],"name":"getEmployeeByAddress","outputs":[{"name":"","type":"address"},{"name":"","type":"string"},{"name":"","type":"string"},{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"employeeID","type":"string"}],"name":"getEmployeeByEmployeeID","outputs":[{"name":"","type":"address"},{"name":"","type":"string"},{"name":"","type":"string"},{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"account","type":"address"}],"name":"removeAuthentication","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"getAdminDetails","outputs":[{"name":"","type":"address"},{"name":"","type":"string"},{"name":"","type":"string"},{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"name","type":"string"}],"name":"getEmployeeByName","outputs":[{"name":"","type":"address"},{"name":"","type":"string"},{"name":"","type":"string"},{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"index","type":"uint256"}],"name":"getEmployeeByIndex","outputs":[{"name":"","type":"address"},{"name":"","type":"string"},{"name":"","type":"string"},{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"account","type":"address"}],"name":"addAuthentication","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"account","type":"address"}],"name":"hasAccessByAddress","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"employeesCount","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"account","type":"address"},{"name":"name","type":"string"},{"name":"employeeID","type":"string"}],"name":"newEmployee","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"account","type":"address"},{"name":"name","type":"string"},{"name":"employeeID","type":"string"}],"name":"updateEmployee","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"admin","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[{"name":"name","type":"string"},{"name":"employeeID","type":"string"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"name":"id","type":"uint256"},{"indexed":false,"name":"employee","type":"address"},{"indexed":false,"name":"name","type":"string"},{"indexed":false,"name":"employeeID","type":"string"},{"indexed":false,"name":"timestamp","type":"uint256"}],"name":"NewEmployeeEvent","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"id","type":"uint256"},{"indexed":false,"name":"employee","type":"address"},{"indexed":false,"name":"name","type":"string"},{"indexed":false,"name":"employeeID","type":"string"},{"indexed":false,"name":"timestamp","type":"uint256"}],"name":"UpdateEmployeeEvent","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"id","type":"uint256"},{"indexed":false,"name":"employee","type":"address"},{"indexed":false,"name":"name","type":"string"},{"indexed":false,"name":"employeeID","type":"string"},{"indexed":false,"name":"timestamp","type":"uint256"}],"name":"RemoveAuthenticationEvent","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"id","type":"uint256"},{"indexed":false,"name":"employee","type":"address"},{"indexed":false,"name":"name","type":"string"},{"indexed":false,"name":"employeeID","type":"string"},{"indexed":false,"name":"timestamp","type":"uint256"}],"name":"AddAuthenticationEvent","type":"event"}]
 
 /***/ }),
 
-/***/ "./utils/addresses/sampleStore.js":
+/***/ "./utils/addresses/employeeStore.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -69850,7 +70274,7 @@ module.exports = [{"constant":true,"inputs":[],"name":"bloodSampleCount","output
   enterModule && enterModule(module);
 })();
 
-var address = '0x3b445ced5769934ee2f62093f4f2d6ab01c3540f';
+var address = '0xfa6934c168ade295fd55b7c91ab1706d35b6588b';
 
 var _default = address;
 /* harmony default export */ __webpack_exports__["a"] = (_default);
@@ -69865,8 +70289,8 @@ var _default = address;
     return;
   }
 
-  reactHotLoader.register(address, 'address', 'C:/Users/Mads/Documents/Bachelor/Dapp/utils/addresses/sampleStore.js');
-  reactHotLoader.register(_default, 'default', 'C:/Users/Mads/Documents/Bachelor/Dapp/utils/addresses/sampleStore.js');
+  reactHotLoader.register(address, 'address', 'C:/Users/Mads/Documents/Bachelor/Dapp/utils/addresses/employeeStore.js');
+  reactHotLoader.register(_default, 'default', 'C:/Users/Mads/Documents/Bachelor/Dapp/utils/addresses/employeeStore.js');
   leaveModule(module);
 })();
 
@@ -69965,16 +70389,16 @@ var _default = provider;
 
 /***/ }),
 
-/***/ 6:
+/***/ 5:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__("./pages/showCellTissue.js");
+module.exports = __webpack_require__("./pages/admin/index.js");
 
 
 /***/ })
 
-},[6])
+},[5])
           return { page: comp.default }
         })
       ;
-//# sourceMappingURL=showCellTissue.js.map
+//# sourceMappingURL=admin.js.map

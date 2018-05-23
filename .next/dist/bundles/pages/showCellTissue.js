@@ -82,7 +82,7 @@ module.exports =
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_semantic_ui_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_semantic_ui_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__routes__ = __webpack_require__("./routes.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__routes___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__routes__);
-var _jsxFileName = 'C:\\Users\\Mads\\Documents\\Bachelor\\dapp\\components\\Header.js';
+var _jsxFileName = 'C:\\Users\\Mads\\Documents\\Bachelor\\Dapp\\components\\Header.js';
 
 
 
@@ -162,7 +162,7 @@ var _jsxFileName = 'C:\\Users\\Mads\\Documents\\Bachelor\\dapp\\components\\Head
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_semantic_ui_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_next_head__ = __webpack_require__("next/head");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_next_head___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_next_head__);
-var _jsxFileName = 'C:\\Users\\Mads\\Documents\\Bachelor\\dapp\\components\\Layout.js';
+var _jsxFileName = 'C:\\Users\\Mads\\Documents\\Bachelor\\Dapp\\components\\Layout.js';
 
 
 
@@ -270,7 +270,7 @@ function initApollo(initialState) {
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _jsxFileName = 'C:\\Users\\Mads\\Documents\\Bachelor\\dapp\\lib\\withData.js';
+var _jsxFileName = 'C:\\Users\\Mads\\Documents\\Bachelor\\Dapp\\lib\\withData.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -455,7 +455,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__utils_abi_sampleStore___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__utils_abi_sampleStore__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__utils_addresses_sampleStore__ = __webpack_require__("./utils/addresses/sampleStore.js");
 
-var _jsxFileName = 'C:\\Users\\Mads\\Documents\\Bachelor\\dapp\\pages\\showCellTissue.js';
+var _jsxFileName = 'C:\\Users\\Mads\\Documents\\Bachelor\\Dapp\\pages\\showCellTissue.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
