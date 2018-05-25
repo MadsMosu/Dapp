@@ -14,7 +14,9 @@ Direct a command console to MongoDB bin folder and type "mongod", followed by a 
 Be sure to load in the data dump into MongoDB, else the application WILL NOT WORK.
 In the second console window type: 
 ```mongorestore --db ffudb projectdir/ffudb/donations```
+
 ```mongorestore --db ffudb projectdir/ffudb/employees```
+
 ```mongorestore --db ffudb projectdir/ffudb/people```
 
 Where projectdir is the main directory of the project. 
