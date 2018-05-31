@@ -24,6 +24,11 @@ class ShowCellTissue extends Component {
             sample = result;
         });
 
+        let sampleIndicator;
+        await SampleStore.functions.getCellTissueSampleIndicatorByIndex(id).then(function(result)) {
+            sampleIndicator = result;
+        }
+
         return{
             id,
             establishment: sample[0],
@@ -32,7 +37,8 @@ class ShowCellTissue extends Component {
             donationType: sample[3],
             dateOfExpiry: sample[4],
             status: sample[5],
-            description: sample[6]
+            description: sample[6],
+            inStorage: sampleIndicator[2],
         };
     }
 
@@ -82,7 +88,9 @@ class ShowCellTissue extends Component {
                         </Grid.Column>                   
                     </Grid.Row>
                 </Grid>
-                <Button loading={this.state.loading} onClick={this.onTake.bind(this)} primary style={{marginTop: '40px'}}>Take Sample</Button>
+                {this.props.inStorage == true && 
+                    <Button loading={this.state.loading} onClick={this.onTake.bind(this)} primary style={{marginTop: '40px'}}>Take Sample</Button>
+                }  
             </Layout>
         );       
     }

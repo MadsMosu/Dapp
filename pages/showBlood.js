@@ -24,6 +24,11 @@ class ShowBlood extends Component {
             sample = result;
         });
 
+        let sampleIndicator;
+        await SampleStore.functions.getBloodSampleIndicatorByIndex(id).then(function(result)) {
+            sampleIndicator = result;
+        }
+
         return{
             id,
             componentName: sample[0],
@@ -32,6 +37,7 @@ class ShowBlood extends Component {
             ABOGroup: sample[3],
             RhDGroup: sample[4],
             dateOfExpiry: sample[5],
+            inStorage: sampleIndicator[2],
         };
     }
 
@@ -76,7 +82,9 @@ class ShowBlood extends Component {
                         </Grid.Column>
                     </Grid.Row>
                 </Grid>
-                <Button loading={this.state.loading} onClick={this.onTake.bind(this)} primary style={{marginTop: '40px'}}>Take Sample</Button>
+                {this.props.inStorage == true &&
+                    <Button loading={this.state.loading} onClick={this.onTake.bind(this)} primary style={{marginTop: '40px'}}>Take Sample</Button>
+                }           
             </Layout>
         );       
     }
@@ -93,14 +101,6 @@ const donation = gql`
                 firstName
                 lastName
             }
-        }
-    }
-`;
-
-const employee = gql`
-    query employee($employeeID: String!){ 
-        employee(employeeID: $employeeID) {
-            privateKey
         }
     }
 `;

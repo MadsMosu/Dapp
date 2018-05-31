@@ -123,8 +123,6 @@ query allPersons {
     }
 }
 `;
-
-//const EmployeeWithData = graphql(employee, {options: ({employeeID}) => ({variables: {employeeID}}),})(SampleForm);
         
 export default compose(
 graphql(allPersons,),
