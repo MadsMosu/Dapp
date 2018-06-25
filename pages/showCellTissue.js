@@ -25,9 +25,9 @@ class ShowCellTissue extends Component {
         });
 
         let sampleIndicator;
-        await SampleStore.functions.getCellTissueSampleIndicatorByIndex(id).then(function(result)) {
+        await SampleStore.functions.getCellTissueSampleIndicatorByIndex(id).then(function(result) {
             sampleIndicator = result;
-        }
+        });
 
         return{
             id,

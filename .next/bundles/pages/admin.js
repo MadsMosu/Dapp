@@ -131,7 +131,7 @@ var EmployeeRow = function (_Component) {
                                 lineNumber: 43
                             }
                         },
-                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["d" /* Icon */], { color: 'green', name: 'checkmark', size: 'large', __source: {
+                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["c" /* Icon */], { color: 'green', name: 'checkmark', size: 'large', __source: {
                                 fileName: _jsxFileName,
                                 lineNumber: 44
                             }
@@ -145,7 +145,7 @@ var EmployeeRow = function (_Component) {
                                 lineNumber: 49
                             }
                         },
-                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["d" /* Icon */], { color: 'red', name: 'close', size: 'large', __source: {
+                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["c" /* Icon */], { color: 'red', name: 'close', size: 'large', __source: {
                                 fileName: _jsxFileName,
                                 lineNumber: 50
                             }
@@ -157,9 +157,9 @@ var EmployeeRow = function (_Component) {
     }, {
         key: 'render',
         value: function render() {
-            var Row = __WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["g" /* Table */].Row,
-                Cell = __WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["g" /* Table */].Cell,
-                Button = __WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["g" /* Table */].Button;
+            var Row = __WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["e" /* Table */].Row,
+                Cell = __WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["e" /* Table */].Cell,
+                Button = __WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["e" /* Table */].Button;
 
             return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
                 Row,
@@ -412,10 +412,10 @@ var EmployeeTable = function (_Component) {
     }, {
         key: 'render',
         value: function render() {
-            var Header = __WEBPACK_IMPORTED_MODULE_10_semantic_ui_react__["g" /* Table */].Header,
-                Row = __WEBPACK_IMPORTED_MODULE_10_semantic_ui_react__["g" /* Table */].Row,
-                HeaderCell = __WEBPACK_IMPORTED_MODULE_10_semantic_ui_react__["g" /* Table */].HeaderCell,
-                Body = __WEBPACK_IMPORTED_MODULE_10_semantic_ui_react__["g" /* Table */].Body;
+            var Header = __WEBPACK_IMPORTED_MODULE_10_semantic_ui_react__["e" /* Table */].Header,
+                Row = __WEBPACK_IMPORTED_MODULE_10_semantic_ui_react__["e" /* Table */].Row,
+                HeaderCell = __WEBPACK_IMPORTED_MODULE_10_semantic_ui_react__["e" /* Table */].HeaderCell,
+                Body = __WEBPACK_IMPORTED_MODULE_10_semantic_ui_react__["e" /* Table */].Body;
 
             return __WEBPACK_IMPORTED_MODULE_9_react___default.a.createElement(
                 'div',
@@ -436,7 +436,7 @@ var EmployeeTable = function (_Component) {
                     'Employees'
                 ),
                 __WEBPACK_IMPORTED_MODULE_9_react___default.a.createElement(
-                    __WEBPACK_IMPORTED_MODULE_10_semantic_ui_react__["g" /* Table */],
+                    __WEBPACK_IMPORTED_MODULE_10_semantic_ui_react__["e" /* Table */],
                     {
                         __source: {
                             fileName: _jsxFileName,
@@ -588,7 +588,7 @@ var _jsxFileName = 'C:\\Users\\Mads\\Documents\\Bachelor\\Dapp\\components\\admi
 
 var _default = function _default() {
   return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-    __WEBPACK_IMPORTED_MODULE_1_semantic_ui_react__["e" /* Menu */],
+    __WEBPACK_IMPORTED_MODULE_1_semantic_ui_react__["d" /* Menu */],
     { style: { marginTop: '20px' }, __source: {
         fileName: _jsxFileName,
         lineNumber: 7
@@ -1005,7 +1005,7 @@ var _default = function _default(ComposedComponent) {
   }, _temp;
 };
 
-/* harmony default export */ __webpack_exports__["a"] = (_default);
+/* unused harmony default export */ var _unused_webpack_default_export = (_default);
 ;
 
 (function () {
@@ -48163,7 +48163,7 @@ GridRow.propTypes =  true ? {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Grid__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/collections/Grid/Grid.js");
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__Grid__["a"]; });
+/* unused harmony reexport default */
 
 
 
@@ -53834,7 +53834,7 @@ SegmentGroup.propTypes =  true ? {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Segment__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/elements/Segment/Segment.js");
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__Segment__["a"]; });
+/* unused harmony reexport default */
 
 
 
@@ -54464,13 +54464,13 @@ StepTitle.create = Object(__WEBPACK_IMPORTED_MODULE_4__lib__["m" /* createShorth
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__collections_Form_FormTextArea__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/collections/Form/FormTextArea.js");
 /* unused harmony reexport FormTextArea */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__collections_Grid__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/collections/Grid/index.js");
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_25__collections_Grid__["a"]; });
+/* unused harmony reexport Grid */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__collections_Grid_GridColumn__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/collections/Grid/GridColumn.js");
 /* unused harmony reexport GridColumn */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__collections_Grid_GridRow__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/collections/Grid/GridRow.js");
 /* unused harmony reexport GridRow */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__collections_Menu__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/collections/Menu/index.js");
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_28__collections_Menu__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_28__collections_Menu__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__collections_Menu_MenuHeader__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/collections/Menu/MenuHeader.js");
 /* unused harmony reexport MenuHeader */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__collections_Menu_MenuItem__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/collections/Menu/MenuItem.js");
@@ -54488,7 +54488,7 @@ StepTitle.create = Object(__WEBPACK_IMPORTED_MODULE_4__lib__["m" /* createShorth
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__collections_Message_MessageList__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/collections/Message/MessageList.js");
 /* unused harmony reexport MessageList */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__collections_Table__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/collections/Table/index.js");
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return __WEBPACK_IMPORTED_MODULE_37__collections_Table__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_37__collections_Table__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__collections_Table_TableBody__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/collections/Table/TableBody.js");
 /* unused harmony reexport TableBody */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__collections_Table_TableCell__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/collections/Table/TableCell.js");
@@ -54522,7 +54522,7 @@ StepTitle.create = Object(__WEBPACK_IMPORTED_MODULE_4__lib__["m" /* createShorth
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__elements_Header_HeaderSubheader__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/elements/Header/HeaderSubheader.js");
 /* unused harmony reexport HeaderSubheader */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__elements_Icon__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/elements/Icon/index.js");
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_54__elements_Icon__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_54__elements_Icon__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_55__elements_Icon_IconGroup__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/elements/Icon/IconGroup.js");
 /* unused harmony reexport IconGroup */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__elements_Image__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/elements/Image/index.js");
@@ -54560,7 +54560,7 @@ StepTitle.create = Object(__WEBPACK_IMPORTED_MODULE_4__lib__["m" /* createShorth
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_72__elements_Reveal_RevealContent__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/elements/Reveal/RevealContent.js");
 /* unused harmony reexport RevealContent */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_73__elements_Segment__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/elements/Segment/index.js");
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_73__elements_Segment__["a"]; });
+/* unused harmony reexport Segment */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_74__elements_Segment_SegmentGroup__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/elements/Segment/SegmentGroup.js");
 /* unused harmony reexport SegmentGroup */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_75__elements_Step__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/elements/Step/index.js");
@@ -70002,10 +70002,10 @@ var adminPage = function (_Component) {
     }, {
         key: 'render',
         value: function render() {
-            var Header = __WEBPACK_IMPORTED_MODULE_11_semantic_ui_react__["g" /* Table */].Header,
-                Row = __WEBPACK_IMPORTED_MODULE_11_semantic_ui_react__["g" /* Table */].Row,
-                HeaderCell = __WEBPACK_IMPORTED_MODULE_11_semantic_ui_react__["g" /* Table */].HeaderCell,
-                Body = __WEBPACK_IMPORTED_MODULE_11_semantic_ui_react__["g" /* Table */].Body;
+            var Header = __WEBPACK_IMPORTED_MODULE_11_semantic_ui_react__["e" /* Table */].Header,
+                Row = __WEBPACK_IMPORTED_MODULE_11_semantic_ui_react__["e" /* Table */].Row,
+                HeaderCell = __WEBPACK_IMPORTED_MODULE_11_semantic_ui_react__["e" /* Table */].HeaderCell,
+                Body = __WEBPACK_IMPORTED_MODULE_11_semantic_ui_react__["e" /* Table */].Body;
 
             return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_2__components_admin_Layout__["a" /* default */],
@@ -70026,7 +70026,7 @@ var adminPage = function (_Component) {
                     'Employees'
                 ),
                 __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                    __WEBPACK_IMPORTED_MODULE_11_semantic_ui_react__["g" /* Table */],
+                    __WEBPACK_IMPORTED_MODULE_11_semantic_ui_react__["e" /* Table */],
                     {
                         __source: {
                             fileName: _jsxFileName,

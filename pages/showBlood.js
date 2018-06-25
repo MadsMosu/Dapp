@@ -25,9 +25,9 @@ class ShowBlood extends Component {
         });
 
         let sampleIndicator;
-        await SampleStore.functions.getBloodSampleIndicatorByIndex(id).then(function(result)) {
+        await SampleStore.functions.getBloodSampleIndicatorByIndex(id).then(function(result) {
             sampleIndicator = result;
-        }
+        });
 
         return{
             id,

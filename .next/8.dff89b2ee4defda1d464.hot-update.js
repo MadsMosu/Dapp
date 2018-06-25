@@ -1,6 +1,6 @@
-webpackHotUpdate(3,{
+webpackHotUpdate(8,{
 
-/***/ "./components/BloodSampleRow.js":
+/***/ "./components/BloodSampleForm.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -12,21 +12,32 @@ webpackHotUpdate(3,{
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ethers__ = __webpack_require__("./node_modules/ethers/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ethers___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_ethers__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_configs_provider__ = __webpack_require__("./utils/configs/provider.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils_abi_employeeStore__ = __webpack_require__("./utils/abi/employeeStore.json");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils_abi_employeeStore___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__utils_abi_employeeStore__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__utils_addresses_employeeStore__ = __webpack_require__("./utils/addresses/employeeStore.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__routes__ = __webpack_require__("./routes.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__routes___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__routes__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils_abi_sampleStore__ = __webpack_require__("./utils/abi/sampleStore.json");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils_abi_sampleStore___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__utils_abi_sampleStore__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__utils_addresses_sampleStore__ = __webpack_require__("./utils/addresses/sampleStore.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_react_apollo__ = __webpack_require__("./node_modules/react-apollo/react-apollo.browser.umd.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_react_apollo___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_react_apollo__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_graphql_tag__ = __webpack_require__("./node_modules/graphql-tag/src/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_graphql_tag___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_graphql_tag__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_apollo_server_express__ = __webpack_require__("./node_modules/apollo-server-express/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_apollo_server_express___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_apollo_server_express__);
 
-var _jsxFileName = 'C:\\Users\\Mads\\Documents\\Bachelor\\Dapp\\components\\BloodSampleRow.js';
+var _jsxFileName = 'C:\\Users\\Mads\\Documents\\Bachelor\\Dapp\\components\\BloodSampleForm.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _templateObject = _taggedTemplateLiteral(['\n    mutation createDonation($id: Int!, $type: String!, $person: String!) {\n        createDonation(input: {id: $id, type: $type, person: $person}) {\n            id\n            type\n            person {\n                cpr\n                firstName\n                lastName\n            }\n        }\n    } \n'], ['\n    mutation createDonation($id: Int!, $type: String!, $person: String!) {\n        createDonation(input: {id: $id, type: $type, person: $person}) {\n            id\n            type\n            person {\n                cpr\n                firstName\n                lastName\n            }\n        }\n    } \n']),
+    _templateObject2 = _taggedTemplateLiteral(['\nquery allPersons { \n    allPersons {\n        cpr\n    }\n}\n'], ['\nquery allPersons { \n    allPersons {\n        cpr\n    }\n}\n']);
 
 (function () {
     var enterModule = __webpack_require__("./node_modules/react-hot-loader/index.js").enterModule;
 
     enterModule && enterModule(module);
 })();
+
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
@@ -44,146 +55,246 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var BloodSampleRow = function (_Component) {
-    _inherits(BloodSampleRow, _Component);
 
-    function BloodSampleRow(props) {
-        var _this2 = this;
 
-        _classCallCheck(this, BloodSampleRow);
 
-        var _this = _possibleConstructorReturn(this, (BloodSampleRow.__proto__ || Object.getPrototypeOf(BloodSampleRow)).call(this, props));
+var BloodSampleForm = function (_Component) {
+    _inherits(BloodSampleForm, _Component);
 
-        _this.componentWillMount = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee() {
-            var adminWallet, EmployeeStore;
-            return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
-                while (1) {
-                    switch (_context.prev = _context.next) {
-                        case 0:
-                            adminWallet = new __WEBPACK_IMPORTED_MODULE_3_ethers___default.a.Wallet("0xcc213ad8f9f68662570d16bc20be6662f86477e3e7edd3b140b007bca44c6186", __WEBPACK_IMPORTED_MODULE_4__utils_configs_provider__["a" /* default */]);
-                            EmployeeStore = new __WEBPACK_IMPORTED_MODULE_3_ethers___default.a.Contract(__WEBPACK_IMPORTED_MODULE_6__utils_addresses_employeeStore__["a" /* default */], __WEBPACK_IMPORTED_MODULE_5__utils_abi_employeeStore___default.a, adminWallet);
-                            _context.next = 4;
-                            return EmployeeStore.functions.getEmployeeByAddress(_this.props.donation.signer).then(function (result) {
-                                _this.setState({ name: result[1] });
-                            });
+    function BloodSampleForm() {
+        var _ref,
+            _this2 = this;
 
-                        case 4:
-                        case 'end':
-                            return _context.stop();
+        var _temp, _this, _ret;
+
+        _classCallCheck(this, BloodSampleForm);
+
+        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+        }
+
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = BloodSampleForm.__proto__ || Object.getPrototypeOf(BloodSampleForm)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+            employeeID: "",
+            componentName: "",
+            volume: "",
+            establishment: "",
+            ABOSelection: "",
+            ABOOptions: [{ text: 'Group A', value: 'Group A' }, { text: 'Group B', value: 'Group B' }, { text: 'Group AB', value: 'Group AB' }, { text: 'Group O', value: 'Group O' }],
+            RhDGroup: "",
+            expiryDate: "",
+            cprValue: "",
+            errorMessage: "",
+            loading: false
+        }, _this.onSubmit = function () {
+            var _ref2 = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee(event) {
+                var employeeWallet, SampleStore, bloodSampleCount;
+                return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
+                    while (1) {
+                        switch (_context.prev = _context.next) {
+                            case 0:
+                                event.preventDefault();
+
+                                _this.setState({ loading: true, errorMessage: '' });
+                                //blockchain
+                                employeeWallet = new __WEBPACK_IMPORTED_MODULE_3_ethers___default.a.Wallet("0x274d1e42f06076e6d3ef981f0c244750827ccf56b19768816618e9217129a030", __WEBPACK_IMPORTED_MODULE_4__utils_configs_provider__["a" /* default */]);
+                                SampleStore = new __WEBPACK_IMPORTED_MODULE_3_ethers___default.a.Contract(__WEBPACK_IMPORTED_MODULE_6__utils_addresses_sampleStore__["a" /* default */], __WEBPACK_IMPORTED_MODULE_5__utils_abi_sampleStore___default.a, employeeWallet);
+                                _context.next = 6;
+                                return SampleStore.functions.addBloodSample(_this.state.componentName, _this.state.volume, _this.state.establishment, _this.state.ABOSelection, _this.state.RhDGroup, _this.state.expiryDate);
+
+                            case 6:
+                                bloodSampleCount = void 0;
+                                _context.next = 9;
+                                return SampleStore.functions.bloodSampleCount().then(function (value) {
+                                    bloodSampleCount = value;
+                                });
+
+                            case 9:
+                                _context.next = 11;
+                                return _this.props.mutate({
+                                    variables: {
+                                        id: parseInt(bloodSampleCount) + 1,
+                                        type: "Blood",
+                                        person: _this.state.cprValue
+                                    }
+                                });
+
+                            case 11:
+                                _this.setState({ loading: false });
+                                window.alert('Succesfully added a new blood sample. Please wait for the transaction to finish.');
+
+                            case 13:
+                            case 'end':
+                                return _context.stop();
+                        }
                     }
-                }
-            }, _callee, _this2);
-        }));
+                }, _callee, _this2);
+            }));
 
-        _this.state = {
-            name: ""
-        };
-        return _this;
+            return function (_x) {
+                return _ref2.apply(this, arguments);
+            };
+        }(), _this.handleChange = function (e, _ref3) {
+            var name = _ref3.name,
+                value = _ref3.value;
+
+            _this.setState(_defineProperty({}, name, value));
+        }, _temp), _possibleConstructorReturn(_this, _ret);
     }
 
-    _createClass(BloodSampleRow, [{
-        key: 'renderButton',
-        value: function renderButton() {
-            return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                __WEBPACK_IMPORTED_MODULE_7__routes__["Link"],
-                { route: '/blooddonations/' + this.props.donation.id, __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 29
-                    }
-                },
-                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                    'a',
+    _createClass(BloodSampleForm, [{
+        key: 'render',
+        value: function render() {
+            if (this.props.data.loading) {
+                return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                    'div',
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 30
+                            lineNumber: 62
+                        }
+                    },
+                    'Loading...'
+                );
+            } else {
+                var cprOptions = [];
+                for (var i = 0; i < this.props.data.allPersons.length; i++) {
+                    cprOptions[i] = { key: this.props.data.allPersons[i].cpr, value: this.props.data.allPersons[i].cpr, text: this.props.data.allPersons[i].cpr };
+                };
+                return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                    'div',
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 70
                         }
                     },
                     __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                        __WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["a" /* Button */],
-                        { basic: true, __source: {
+                        'h3',
+                        {
+                            __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 30
+                                lineNumber: 71
                             }
                         },
-                        'Go to'
+                        'Add a new Blood Sample'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                        __WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["d" /* Form */],
+                        { onSubmit: this.onSubmit.bind(this), error: !!this.state.errorMessage, __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 72
+                            }
+                        },
+                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                            'h4',
+                            {
+                                __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 73
+                                }
+                            },
+                            'Sample'
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                            __WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["d" /* Form */].Field,
+                            { inline: true, __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 74
+                                }
+                            },
+                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["f" /* Input */], { label: 'Component Name', name: 'componentName', placeholder: 'Name', value: this.state.name, required: true, onChange: this.handleChange, __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 75
+                                }
+                            })
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                            __WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["d" /* Form */].Field,
+                            { inline: true, __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 77
+                                }
+                            },
+                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["f" /* Input */], { label: 'Volume in ml', name: 'volume', placeholder: 'volume', value: this.state.name, required: true, onChange: this.handleChange, __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 78
+                                }
+                            })
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                            __WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["d" /* Form */].Field,
+                            { inline: true, __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 80
+                                }
+                            },
+                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["f" /* Input */], { label: 'Establishment', name: 'establishment', placeholder: 'Establishment name', value: this.state.name, required: true, onChange: this.handleChange, __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 81
+                                }
+                            })
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["c" /* Dropdown */], { name: 'ABOSelection', placeholder: 'ABO Group', selection: true, options: this.state.ABOOptions, required: true, onChange: this.handleChange, style: { marginBottom: '20px' }, __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 83
+                            }
+                        }),
+                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                            __WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["d" /* Form */].Field,
+                            { inline: true, __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 84
+                                }
+                            },
+                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["f" /* Input */], { label: 'RhD Group', name: 'RhDGroup', placeholder: 'RhD Group', value: this.state.name, required: true, onChange: this.handleChange, __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 85
+                                }
+                            })
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                            __WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["d" /* Form */].Field,
+                            { inline: true, __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 87
+                                }
+                            },
+                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["f" /* Input */], { label: 'Date of Expiry', name: 'expiryDate', placeholder: 'Expiry Date', value: this.state.name, required: true, onChange: this.handleChange, __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 88
+                                }
+                            })
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                            __WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["d" /* Form */].Field,
+                            { inline: true, __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 90
+                                }
+                            },
+                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["c" /* Dropdown */], { name: 'cprValue', placeholder: 'CPR number of person', search: true, selection: true, options: cprOptions, required: true, onChange: this.handleChange, __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 91
+                                }
+                            })
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["h" /* Message */], { error: true, header: 'Error!', content: this.state.errorMessage, __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 93
+                            }
+                        }),
+                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                            __WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["a" /* Button */],
+                            { loading: this.state.loading, primary: true, __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 94
+                                }
+                            },
+                            'Submit Sample'
+                        )
                     )
-                )
-            );
-        }
-    }, {
-        key: 'renderStorage',
-        value: function renderStorage() {
-            if (this.props.donation.inStorage == true) {
-                return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["d" /* Icon */], { color: 'green', name: 'checkmark', size: 'large', __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 38
-                    }
-                });
-            } else {
-                return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["d" /* Icon */], { color: 'red', name: 'close', size: 'large', __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 42
-                    }
-                });
+                );
             }
-        }
-    }, {
-        key: 'render',
-        value: function render() {
-            var Row = __WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["g" /* Table */].Row,
-                Cell = __WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["g" /* Table */].Cell,
-                Button = __WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["g" /* Table */].Button;
-
-            return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                Row,
-                {
-                    __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 50
-                    }
-                },
-                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                    Cell,
-                    {
-                        __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 51
-                        }
-                    },
-                    this.props.donation.id
-                ),
-                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                    Cell,
-                    {
-                        __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 52
-                        }
-                    },
-                    this.state.name
-                ),
-                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                    Cell,
-                    {
-                        __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 53
-                        }
-                    },
-                    this.renderStorage()
-                ),
-                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                    Cell,
-                    {
-                        __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 54
-                        }
-                    },
-                    this.renderButton()
-                )
-            );
         }
     }, {
         key: '__reactstandin__regenerateByEval',
@@ -192,11 +303,14 @@ var BloodSampleRow = function (_Component) {
         }
     }]);
 
-    return BloodSampleRow;
+    return BloodSampleForm;
 }(__WEBPACK_IMPORTED_MODULE_1_react__["Component"]);
 
-var _default = BloodSampleRow;
+var createDonation = __WEBPACK_IMPORTED_MODULE_8_graphql_tag___default()(_templateObject);
 
+var allPersons = __WEBPACK_IMPORTED_MODULE_8_graphql_tag___default()(_templateObject2);
+
+var _default = Object(__WEBPACK_IMPORTED_MODULE_7_react_apollo__["compose"])(Object(__WEBPACK_IMPORTED_MODULE_7_react_apollo__["graphql"])(allPersons), Object(__WEBPACK_IMPORTED_MODULE_7_react_apollo__["graphql"])(createDonation))(BloodSampleForm);
 
 /* harmony default export */ __webpack_exports__["a"] = (_default);
 ;
@@ -210,228 +324,10 @@ var _default = BloodSampleRow;
         return;
     }
 
-    reactHotLoader.register(BloodSampleRow, 'BloodSampleRow', 'C:/Users/Mads/Documents/Bachelor/Dapp/components/BloodSampleRow.js');
-    reactHotLoader.register(_default, 'default', 'C:/Users/Mads/Documents/Bachelor/Dapp/components/BloodSampleRow.js');
-    leaveModule(module);
-})();
-
-;
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("./node_modules/next/node_modules/webpack/buildin/harmony-module.js")(module)))
-
-/***/ }),
-
-/***/ "./components/CellTissueSampleRow.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__ = __webpack_require__("./node_modules/babel-runtime/regenerator/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__("./node_modules/react/cjs/react.development.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ethers__ = __webpack_require__("./node_modules/ethers/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ethers___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_ethers__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_configs_provider__ = __webpack_require__("./utils/configs/provider.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils_abi_employeeStore__ = __webpack_require__("./utils/abi/employeeStore.json");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils_abi_employeeStore___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__utils_abi_employeeStore__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__utils_addresses_employeeStore__ = __webpack_require__("./utils/addresses/employeeStore.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__routes__ = __webpack_require__("./routes.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__routes___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__routes__);
-
-var _jsxFileName = 'C:\\Users\\Mads\\Documents\\Bachelor\\Dapp\\components\\CellTissueSampleRow.js';
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-(function () {
-    var enterModule = __webpack_require__("./node_modules/react-hot-loader/index.js").enterModule;
-
-    enterModule && enterModule(module);
-})();
-
-function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-
-
-
-
-
-
-
-
-var CellTissueSampleRow = function (_Component) {
-    _inherits(CellTissueSampleRow, _Component);
-
-    function CellTissueSampleRow(props) {
-        var _this2 = this;
-
-        _classCallCheck(this, CellTissueSampleRow);
-
-        var _this = _possibleConstructorReturn(this, (CellTissueSampleRow.__proto__ || Object.getPrototypeOf(CellTissueSampleRow)).call(this, props));
-
-        _this.componentWillMount = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee() {
-            var adminWallet, EmployeeStore;
-            return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
-                while (1) {
-                    switch (_context.prev = _context.next) {
-                        case 0:
-                            adminWallet = new __WEBPACK_IMPORTED_MODULE_3_ethers___default.a.Wallet("0xcc213ad8f9f68662570d16bc20be6662f86477e3e7edd3b140b007bca44c6186", __WEBPACK_IMPORTED_MODULE_4__utils_configs_provider__["a" /* default */]);
-                            EmployeeStore = new __WEBPACK_IMPORTED_MODULE_3_ethers___default.a.Contract(__WEBPACK_IMPORTED_MODULE_6__utils_addresses_employeeStore__["a" /* default */], __WEBPACK_IMPORTED_MODULE_5__utils_abi_employeeStore___default.a, adminWallet);
-                            _context.next = 4;
-                            return EmployeeStore.functions.getEmployeeByAddress(_this.props.donation.signer).then(function (result) {
-                                _this.setState({ name: result[1] });
-                            });
-
-                        case 4:
-                        case 'end':
-                            return _context.stop();
-                    }
-                }
-            }, _callee, _this2);
-        }));
-
-        _this.state = {
-            name: ""
-        };
-        return _this;
-    }
-
-    _createClass(CellTissueSampleRow, [{
-        key: 'renderButton',
-        value: function renderButton() {
-            return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                __WEBPACK_IMPORTED_MODULE_7__routes__["Link"],
-                { route: '/celltissuedonations/' + this.props.donation.id, __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 29
-                    }
-                },
-                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                    'a',
-                    {
-                        __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 30
-                        }
-                    },
-                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                        __WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["a" /* Button */],
-                        { basic: true, __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 30
-                            }
-                        },
-                        'Go to'
-                    )
-                )
-            );
-        }
-    }, {
-        key: 'renderStorage',
-        value: function renderStorage() {
-            if (this.props.donation.inStorage == true) {
-                return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["d" /* Icon */], { color: 'green', name: 'checkmark', size: 'large', __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 38
-                    }
-                });
-            } else {
-                return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["d" /* Icon */], { color: 'red', name: 'close', size: 'large', __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 42
-                    }
-                });
-            }
-        }
-    }, {
-        key: 'render',
-        value: function render() {
-            var Row = __WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["g" /* Table */].Row,
-                Cell = __WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["g" /* Table */].Cell,
-                Button = __WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["g" /* Table */].Button;
-
-            return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                Row,
-                {
-                    __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 50
-                    }
-                },
-                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                    Cell,
-                    {
-                        __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 51
-                        }
-                    },
-                    this.props.donation.id
-                ),
-                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                    Cell,
-                    {
-                        __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 52
-                        }
-                    },
-                    this.state.name
-                ),
-                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                    Cell,
-                    {
-                        __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 53
-                        }
-                    },
-                    this.renderStorage()
-                ),
-                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                    Cell,
-                    {
-                        __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 54
-                        }
-                    },
-                    this.renderButton()
-                )
-            );
-        }
-    }, {
-        key: '__reactstandin__regenerateByEval',
-        value: function __reactstandin__regenerateByEval(key, code) {
-            this[key] = eval(code);
-        }
-    }]);
-
-    return CellTissueSampleRow;
-}(__WEBPACK_IMPORTED_MODULE_1_react__["Component"]);
-
-var _default = CellTissueSampleRow;
-
-
-/* harmony default export */ __webpack_exports__["a"] = (_default);
-;
-
-(function () {
-    var reactHotLoader = __webpack_require__("./node_modules/react-hot-loader/index.js").default;
-
-    var leaveModule = __webpack_require__("./node_modules/react-hot-loader/index.js").leaveModule;
-
-    if (!reactHotLoader) {
-        return;
-    }
-
-    reactHotLoader.register(CellTissueSampleRow, 'CellTissueSampleRow', 'C:/Users/Mads/Documents/Bachelor/Dapp/components/CellTissueSampleRow.js');
-    reactHotLoader.register(_default, 'default', 'C:/Users/Mads/Documents/Bachelor/Dapp/components/CellTissueSampleRow.js');
+    reactHotLoader.register(BloodSampleForm, 'BloodSampleForm', 'C:/Users/Mads/Documents/Bachelor/Dapp/components/BloodSampleForm.js');
+    reactHotLoader.register(createDonation, 'createDonation', 'C:/Users/Mads/Documents/Bachelor/Dapp/components/BloodSampleForm.js');
+    reactHotLoader.register(allPersons, 'allPersons', 'C:/Users/Mads/Documents/Bachelor/Dapp/components/BloodSampleForm.js');
+    reactHotLoader.register(_default, 'default', 'C:/Users/Mads/Documents/Bachelor/Dapp/components/BloodSampleForm.js');
     leaveModule(module);
 })();
 
@@ -463,7 +359,7 @@ var _jsxFileName = 'C:\\Users\\Mads\\Documents\\Bachelor\\Dapp\\components\\Head
 
 var _default = function _default() {
   return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-    __WEBPACK_IMPORTED_MODULE_1_semantic_ui_react__["e" /* Menu */],
+    __WEBPACK_IMPORTED_MODULE_1_semantic_ui_react__["g" /* Menu */],
     { style: { marginTop: '20px' }, __source: {
         fileName: _jsxFileName,
         lineNumber: 7
@@ -626,7 +522,7 @@ var _default = function _default(props) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Grid__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/collections/Grid/Grid.js");
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__Grid__["a"]; });
+/* unused harmony reexport default */
 
 
 
@@ -637,7 +533,7 @@ var _default = function _default(props) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Segment__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/elements/Segment/Segment.js");
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__Segment__["a"]; });
+/* unused harmony reexport default */
 
 
 
@@ -678,7 +574,7 @@ var _default = function _default(props) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__collections_Breadcrumb_BreadcrumbSection__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/collections/Breadcrumb/BreadcrumbSection.js");
 /* unused harmony reexport BreadcrumbSection */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__collections_Form__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/collections/Form/index.js");
-/* unused harmony reexport Form */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_15__collections_Form__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__collections_Form_FormButton__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/collections/Form/FormButton.js");
 /* unused harmony reexport FormButton */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__collections_Form_FormCheckbox__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/collections/Form/FormCheckbox.js");
@@ -698,13 +594,13 @@ var _default = function _default(props) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__collections_Form_FormTextArea__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/collections/Form/FormTextArea.js");
 /* unused harmony reexport FormTextArea */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__collections_Grid__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/collections/Grid/index.js");
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_25__collections_Grid__["a"]; });
+/* unused harmony reexport Grid */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__collections_Grid_GridColumn__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/collections/Grid/GridColumn.js");
 /* unused harmony reexport GridColumn */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__collections_Grid_GridRow__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/collections/Grid/GridRow.js");
 /* unused harmony reexport GridRow */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__collections_Menu__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/collections/Menu/index.js");
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_28__collections_Menu__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return __WEBPACK_IMPORTED_MODULE_28__collections_Menu__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__collections_Menu_MenuHeader__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/collections/Menu/MenuHeader.js");
 /* unused harmony reexport MenuHeader */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__collections_Menu_MenuItem__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/collections/Menu/MenuItem.js");
@@ -712,7 +608,7 @@ var _default = function _default(props) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__collections_Menu_MenuMenu__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/collections/Menu/MenuMenu.js");
 /* unused harmony reexport MenuMenu */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__collections_Message__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/collections/Message/index.js");
-/* unused harmony reexport Message */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return __WEBPACK_IMPORTED_MODULE_32__collections_Message__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__collections_Message_MessageContent__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/collections/Message/MessageContent.js");
 /* unused harmony reexport MessageContent */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__collections_Message_MessageHeader__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/collections/Message/MessageHeader.js");
@@ -722,7 +618,7 @@ var _default = function _default(props) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__collections_Message_MessageList__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/collections/Message/MessageList.js");
 /* unused harmony reexport MessageList */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__collections_Table__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/collections/Table/index.js");
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return __WEBPACK_IMPORTED_MODULE_37__collections_Table__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return __WEBPACK_IMPORTED_MODULE_37__collections_Table__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__collections_Table_TableBody__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/collections/Table/TableBody.js");
 /* unused harmony reexport TableBody */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__collections_Table_TableCell__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/collections/Table/TableCell.js");
@@ -756,7 +652,7 @@ var _default = function _default(props) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__elements_Header_HeaderSubheader__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/elements/Header/HeaderSubheader.js");
 /* unused harmony reexport HeaderSubheader */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__elements_Icon__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/elements/Icon/index.js");
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_54__elements_Icon__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_54__elements_Icon__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_55__elements_Icon_IconGroup__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/elements/Icon/IconGroup.js");
 /* unused harmony reexport IconGroup */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__elements_Image__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/elements/Image/index.js");
@@ -764,7 +660,7 @@ var _default = function _default(props) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_57__elements_Image_ImageGroup__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/elements/Image/ImageGroup.js");
 /* unused harmony reexport ImageGroup */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_58__elements_Input__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/elements/Input/index.js");
-/* unused harmony reexport Input */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_58__elements_Input__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_59__elements_Label__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/elements/Label/index.js");
 /* unused harmony reexport Label */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_60__elements_Label_LabelDetail__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/elements/Label/LabelDetail.js");
@@ -794,7 +690,7 @@ var _default = function _default(props) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_72__elements_Reveal_RevealContent__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/elements/Reveal/RevealContent.js");
 /* unused harmony reexport RevealContent */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_73__elements_Segment__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/elements/Segment/index.js");
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_73__elements_Segment__["a"]; });
+/* unused harmony reexport Segment */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_74__elements_Segment_SegmentGroup__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/elements/Segment/SegmentGroup.js");
 /* unused harmony reexport SegmentGroup */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_75__elements_Step__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/elements/Step/index.js");
@@ -822,7 +718,7 @@ var _default = function _default(props) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_86__modules_Dimmer_DimmerDimmable__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/modules/Dimmer/DimmerDimmable.js");
 /* unused harmony reexport DimmerDimmable */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_87__modules_Dropdown__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/modules/Dropdown/index.js");
-/* unused harmony reexport Dropdown */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_87__modules_Dropdown__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_88__modules_Dropdown_DropdownDivider__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/modules/Dropdown/DropdownDivider.js");
 /* unused harmony reexport DropdownDivider */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_89__modules_Dropdown_DropdownHeader__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/modules/Dropdown/DropdownHeader.js");
@@ -1161,433 +1057,7 @@ var _default = function _default(props) {
 
 
 
-/***/ }),
-
-/***/ "./pages/index.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__ = __webpack_require__("./node_modules/babel-runtime/regenerator/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__("./node_modules/react/cjs/react.development.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Layout__ = __webpack_require__("./components/Layout.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ethers__ = __webpack_require__("./node_modules/ethers/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ethers___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_ethers__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils_configs_provider__ = __webpack_require__("./utils/configs/provider.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__utils_abi_sampleStore__ = __webpack_require__("./utils/abi/sampleStore.json");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__utils_abi_sampleStore___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__utils_abi_sampleStore__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__utils_addresses_sampleStore__ = __webpack_require__("./utils/addresses/sampleStore.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_BloodSampleRow__ = __webpack_require__("./components/BloodSampleRow.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_CellTissueSampleRow__ = __webpack_require__("./components/CellTissueSampleRow.js");
-
-var _jsxFileName = 'C:\\Users\\Mads\\Documents\\Bachelor\\Dapp\\pages\\index.js';
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-(function () {
-    var enterModule = __webpack_require__("./node_modules/react-hot-loader/index.js").enterModule;
-
-    enterModule && enterModule(module);
-})();
-
-function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-
-
-
-
-
-
-
-
-
-
-var SamplePage = function (_Component) {
-    _inherits(SamplePage, _Component);
-
-    function SamplePage() {
-        _classCallCheck(this, SamplePage);
-
-        return _possibleConstructorReturn(this, (SamplePage.__proto__ || Object.getPrototypeOf(SamplePage)).apply(this, arguments));
-    }
-
-    _createClass(SamplePage, [{
-        key: 'renderBloodRows',
-        value: function renderBloodRows() {
-            return this.props.bloodSampleIndicators.map(function (donation, index) {
-                return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_8__components_BloodSampleRow__["a" /* default */], {
-                    key: index,
-                    donation: donation,
-                    __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 56
-                    }
-                });
-            });
-        }
-    }, {
-        key: 'renderCellTissueRows',
-        value: function renderCellTissueRows() {
-            return this.props.cellTissueSampleIndicators.map(function (donation, index) {
-                return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_9__components_CellTissueSampleRow__["a" /* default */], {
-                    key: index,
-                    donation: donation,
-                    __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 66
-                    }
-                });
-            });
-        }
-    }, {
-        key: 'render',
-        value: function render() {
-            var Header = __WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["g" /* Table */].Header,
-                Row = __WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["g" /* Table */].Row,
-                HeaderCell = __WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["g" /* Table */].HeaderCell,
-                Body = __WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["g" /* Table */].Body;
-
-            return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                __WEBPACK_IMPORTED_MODULE_2__components_Layout__["a" /* default */],
-                {
-                    __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 77
-                    }
-                },
-                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                    'h3',
-                    {
-                        __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 78
-                        }
-                    },
-                    'Blood Samples'
-                ),
-                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                    __WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["g" /* Table */],
-                    {
-                        __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 79
-                        }
-                    },
-                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                        Header,
-                        {
-                            __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 80
-                            }
-                        },
-                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                            Row,
-                            {
-                                __source: {
-                                    fileName: _jsxFileName,
-                                    lineNumber: 81
-                                }
-                            },
-                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                                HeaderCell,
-                                {
-                                    __source: {
-                                        fileName: _jsxFileName,
-                                        lineNumber: 82
-                                    }
-                                },
-                                'Donation ID'
-                            ),
-                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                                HeaderCell,
-                                {
-                                    __source: {
-                                        fileName: _jsxFileName,
-                                        lineNumber: 83
-                                    }
-                                },
-                                'Signer'
-                            ),
-                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                                HeaderCell,
-                                {
-                                    __source: {
-                                        fileName: _jsxFileName,
-                                        lineNumber: 84
-                                    }
-                                },
-                                'In Storage'
-                            ),
-                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                                HeaderCell,
-                                {
-                                    __source: {
-                                        fileName: _jsxFileName,
-                                        lineNumber: 85
-                                    }
-                                },
-                                'Sample'
-                            )
-                        )
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                        Body,
-                        {
-                            __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 88
-                            }
-                        },
-                        this.renderBloodRows()
-                    )
-                ),
-                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                    'h3',
-                    {
-                        __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 90
-                        }
-                    },
-                    'Cell and Tissue Samples'
-                ),
-                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                    __WEBPACK_IMPORTED_MODULE_3_semantic_ui_react__["g" /* Table */],
-                    {
-                        __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 91
-                        }
-                    },
-                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                        Header,
-                        {
-                            __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 92
-                            }
-                        },
-                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                            Row,
-                            {
-                                __source: {
-                                    fileName: _jsxFileName,
-                                    lineNumber: 93
-                                }
-                            },
-                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                                HeaderCell,
-                                {
-                                    __source: {
-                                        fileName: _jsxFileName,
-                                        lineNumber: 94
-                                    }
-                                },
-                                'Donation ID'
-                            ),
-                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                                HeaderCell,
-                                {
-                                    __source: {
-                                        fileName: _jsxFileName,
-                                        lineNumber: 95
-                                    }
-                                },
-                                'Signer'
-                            ),
-                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                                HeaderCell,
-                                {
-                                    __source: {
-                                        fileName: _jsxFileName,
-                                        lineNumber: 96
-                                    }
-                                },
-                                'In Storage'
-                            ),
-                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                                HeaderCell,
-                                {
-                                    __source: {
-                                        fileName: _jsxFileName,
-                                        lineNumber: 97
-                                    }
-                                },
-                                'Sample'
-                            )
-                        )
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                        Body,
-                        {
-                            __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 100
-                            }
-                        },
-                        this.renderCellTissueRows()
-                    )
-                )
-            );
-        }
-    }, {
-        key: '__reactstandin__regenerateByEval',
-        value: function __reactstandin__regenerateByEval(key, code) {
-            this[key] = eval(code);
-        }
-    }], [{
-        key: 'getInitialProps',
-        value: function () {
-            var _ref = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee() {
-                var employeeWallet, SampleStore, bloodCount, cellTissueCount, bloodSampleIndicators, i, cellTissueSampleIndicators, _i;
-
-                return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
-                    while (1) {
-                        switch (_context.prev = _context.next) {
-                            case 0:
-                                employeeWallet = new __WEBPACK_IMPORTED_MODULE_4_ethers___default.a.Wallet("0x274d1e42f06076e6d3ef981f0c244750827ccf56b19768816618e9217129a030", __WEBPACK_IMPORTED_MODULE_5__utils_configs_provider__["a" /* default */]);
-                                SampleStore = new __WEBPACK_IMPORTED_MODULE_4_ethers___default.a.Contract(__WEBPACK_IMPORTED_MODULE_7__utils_addresses_sampleStore__["a" /* default */], __WEBPACK_IMPORTED_MODULE_6__utils_abi_sampleStore___default.a, employeeWallet);
-                                bloodCount = void 0;
-                                _context.next = 5;
-                                return SampleStore.functions.bloodSampleCount().then(function (value) {
-                                    bloodCount = value;
-                                });
-
-                            case 5:
-                                cellTissueCount = void 0;
-                                _context.next = 8;
-                                return SampleStore.functions.cellTissueSampleCount().then(function (value) {
-                                    cellTissueCount = value;
-                                });
-
-                            case 8:
-                                bloodSampleIndicators = [];
-                                i = 1;
-
-                            case 10:
-                                if (!(i <= bloodCount)) {
-                                    _context.next = 16;
-                                    break;
-                                }
-
-                                _context.next = 13;
-                                return SampleStore.functions.getBloodSampleIndicatorByIndex(i).then(function (result) {
-                                    var bloodSample = {
-                                        id: parseInt(result[0]),
-                                        signer: result[1],
-                                        inStorage: result[2]
-                                    };
-                                    bloodSampleIndicators.push(bloodSample);
-                                });
-
-                            case 13:
-                                i++;
-                                _context.next = 10;
-                                break;
-
-                            case 16:
-                                ;
-
-                                cellTissueSampleIndicators = [];
-                                _i = 1;
-
-                            case 19:
-                                if (!(_i <= cellTissueCount)) {
-                                    _context.next = 25;
-                                    break;
-                                }
-
-                                _context.next = 22;
-                                return SampleStore.functions.getCellTissueSampleIndicatorByIndex(_i).then(function (result) {
-                                    var cellTissueSample = {
-                                        id: parseInt(result[0]),
-                                        signer: result[1],
-                                        inStorage: result[2]
-                                    };
-                                    cellTissueSampleIndicators.push(cellTissueSample);
-                                });
-
-                            case 22:
-                                _i++;
-                                _context.next = 19;
-                                break;
-
-                            case 25:
-                                ;
-
-                                return _context.abrupt('return', { bloodSampleIndicators: bloodSampleIndicators, cellTissueSampleIndicators: cellTissueSampleIndicators });
-
-                            case 27:
-                            case 'end':
-                                return _context.stop();
-                        }
-                    }
-                }, _callee, this);
-            }));
-
-            function getInitialProps() {
-                return _ref.apply(this, arguments);
-            }
-
-            return getInitialProps;
-        }()
-    }]);
-
-    return SamplePage;
-}(__WEBPACK_IMPORTED_MODULE_1_react__["Component"]);
-
-var _default = SamplePage;
-
-
-/* harmony default export */ __webpack_exports__["default"] = (_default);
-;
-
-(function () {
-    var reactHotLoader = __webpack_require__("./node_modules/react-hot-loader/index.js").default;
-
-    var leaveModule = __webpack_require__("./node_modules/react-hot-loader/index.js").leaveModule;
-
-    if (!reactHotLoader) {
-        return;
-    }
-
-    reactHotLoader.register(SamplePage, 'SamplePage', 'C:/Users/Mads/Documents/Bachelor/Dapp/pages/index.js');
-    reactHotLoader.register(_default, 'default', 'C:/Users/Mads/Documents/Bachelor/Dapp/pages/index.js');
-    leaveModule(module);
-})();
-
-;
-    (function (Component, route) {
-      if(!Component) return
-      if (false) return
-      module.hot.accept()
-      Component.__route = route
-
-      if (module.hot.status() === 'idle') return
-
-      var components = next.router.components
-      for (var r in components) {
-        if (!components.hasOwnProperty(r)) continue
-
-        if (components[r].Component.__route === route) {
-          next.router.update(r, Component)
-        }
-      }
-    })(typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__.default : (module.exports.default || module.exports), "/")
-  
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("./node_modules/next/node_modules/webpack/buildin/harmony-module.js")(module)))
-
 /***/ })
 
 })
-//# sourceMappingURL=3.b26c7e475a1209f72cc1.hot-update.js.map
+//# sourceMappingURL=8.dff89b2ee4defda1d464.hot-update.js.map

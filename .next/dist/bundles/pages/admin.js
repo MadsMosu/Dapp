@@ -792,7 +792,7 @@ function getComponentDisplayName(Component) {
   return Component.displayName || Component.name || 'Unknown';
 }
 
-/* harmony default export */ __webpack_exports__["a"] = (function (ComposedComponent) {
+/* unused harmony default export */ var _unused_webpack_default_export = (function (ComposedComponent) {
   var _class, _temp;
 
   return _temp = _class = function (_React$Component) {
